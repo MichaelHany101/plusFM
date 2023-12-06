@@ -9,8 +9,30 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var tabBarItem = 1
+    
     var body: some View {
-        Text("Plus-FM")
+        ZStack{
+            switch tabBarItem {
+            case 0:
+                HomeView()
+            case 1:
+                StreamView()
+            case 2:
+                MoreView()
+            default:
+                NoView()
+            }
+            VStack{
+                Spacer()
+                
+                TabBar(index: $tabBarItem)
+            }
+        }
+        .onAppear{
+            setBackgroungUserDefault(background: "PlusFM")
+
+        }
     }
 }
 

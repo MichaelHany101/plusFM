@@ -16,6 +16,14 @@
 		0416CFDF2B20B56300F81AFE /* plusFMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416CFDE2B20B56300F81AFE /* plusFMUITests.swift */; };
 		0416CFE12B20B56300F81AFE /* plusFMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416CFE02B20B56300F81AFE /* plusFMUITestsLaunchTests.swift */; };
 		0416CFF02B20D52500F81AFE /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0416CFEF2B20D52500F81AFE /* Launch Screen.storyboard */; };
+		0416CFF42B20F1CE00F81AFE /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416CFF32B20F1CE00F81AFE /* TabBar.swift */; };
+		0416CFF92B20F89600F81AFE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416CFF82B20F89600F81AFE /* Colors.swift */; };
+		0416CFFB2B21080000F81AFE /* CustomShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416CFFA2B21080000F81AFE /* CustomShape.swift */; };
+		0416D0052B21188B00F81AFE /* StreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416D0042B21188B00F81AFE /* StreamView.swift */; };
+		0416D0072B21189B00F81AFE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416D0062B21189B00F81AFE /* HomeView.swift */; };
+		0416D0092B2118A900F81AFE /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416D0082B2118A900F81AFE /* MoreView.swift */; };
+		0416D00B2B211EB800F81AFE /* NoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416D00A2B211EB800F81AFE /* NoView.swift */; };
+		0416D00D2B21214E00F81AFE /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416D00C2B21214E00F81AFE /* ViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		0416CFDE2B20B56300F81AFE /* plusFMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plusFMUITests.swift; sourceTree = "<group>"; };
 		0416CFE02B20B56300F81AFE /* plusFMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plusFMUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0416CFEF2B20D52500F81AFE /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		0416CFF32B20F1CE00F81AFE /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		0416CFF82B20F89600F81AFE /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		0416CFFA2B21080000F81AFE /* CustomShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShape.swift; sourceTree = "<group>"; };
+		0416D0042B21188B00F81AFE /* StreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamView.swift; sourceTree = "<group>"; };
+		0416D0062B21189B00F81AFE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0416D0082B2118A900F81AFE /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		0416D00A2B211EB800F81AFE /* NoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoView.swift; sourceTree = "<group>"; };
+		0416D00C2B21214E00F81AFE /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +115,9 @@
 		0416CFBC2B20B56000F81AFE /* plusFM */ = {
 			isa = PBXGroup;
 			children = (
+				0416D0012B21182800F81AFE /* Views */,
+				0416CFF72B20F88300F81AFE /* Enums */,
+				0416CFF12B20F1A100F81AFE /* Screens */,
 				0416CFBD2B20B56000F81AFE /* plusFMApp.swift */,
 				0416CFBF2B20B56000F81AFE /* ContentView.swift */,
 				0416CFC12B20B56300F81AFE /* Assets.xcassets */,
@@ -133,6 +152,67 @@
 				0416CFE02B20B56300F81AFE /* plusFMUITestsLaunchTests.swift */,
 			);
 			path = plusFMUITests;
+			sourceTree = "<group>";
+		};
+		0416CFF12B20F1A100F81AFE /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				0416CFF22B20F1B600F81AFE /* TabBar */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		0416CFF22B20F1B600F81AFE /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				0416CFF32B20F1CE00F81AFE /* TabBar.swift */,
+				0416CFFA2B21080000F81AFE /* CustomShape.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		0416CFF72B20F88300F81AFE /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				0416CFF82B20F89600F81AFE /* Colors.swift */,
+				0416D00C2B21214E00F81AFE /* ViewExtension.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		0416D0002B21180E00F81AFE /* More */ = {
+			isa = PBXGroup;
+			children = (
+				0416D0082B2118A900F81AFE /* MoreView.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		0416D0012B21182800F81AFE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0416D0032B21183D00F81AFE /* Stream */,
+				0416D0022B21183500F81AFE /* Home */,
+				0416D0002B21180E00F81AFE /* More */,
+				0416D00A2B211EB800F81AFE /* NoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0416D0022B21183500F81AFE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0416D0062B21189B00F81AFE /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0416D0032B21183D00F81AFE /* Stream */ = {
+			isa = PBXGroup;
+			children = (
+				0416D0042B21188B00F81AFE /* StreamView.swift */,
+			);
+			path = Stream;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,9 +346,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0416D0072B21189B00F81AFE /* HomeView.swift in Sources */,
 				0416CFC02B20B56000F81AFE /* ContentView.swift in Sources */,
+				0416CFF92B20F89600F81AFE /* Colors.swift in Sources */,
+				0416D0052B21188B00F81AFE /* StreamView.swift in Sources */,
 				0416CFCA2B20B56300F81AFE /* plusFM.xcdatamodeld in Sources */,
 				0416CFBE2B20B56000F81AFE /* plusFMApp.swift in Sources */,
+				0416D00D2B21214E00F81AFE /* ViewExtension.swift in Sources */,
+				0416CFF42B20F1CE00F81AFE /* TabBar.swift in Sources */,
+				0416D00B2B211EB800F81AFE /* NoView.swift in Sources */,
+				0416CFFB2B21080000F81AFE /* CustomShape.swift in Sources */,
+				0416D0092B2118A900F81AFE /* MoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
