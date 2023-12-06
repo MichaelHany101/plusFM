@@ -11,7 +11,6 @@
 		0416CFC02B20B56000F81AFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416CFBF2B20B56000F81AFE /* ContentView.swift */; };
 		0416CFC22B20B56300F81AFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0416CFC12B20B56300F81AFE /* Assets.xcassets */; };
 		0416CFC52B20B56300F81AFE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0416CFC42B20B56300F81AFE /* Preview Assets.xcassets */; };
-		0416CFC72B20B56300F81AFE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416CFC62B20B56300F81AFE /* Persistence.swift */; };
 		0416CFCA2B20B56300F81AFE /* plusFM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0416CFC82B20B56300F81AFE /* plusFM.xcdatamodeld */; };
 		0416CFD52B20B56300F81AFE /* plusFMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416CFD42B20B56300F81AFE /* plusFMTests.swift */; };
 		0416CFDF2B20B56300F81AFE /* plusFMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416CFDE2B20B56300F81AFE /* plusFMUITests.swift */; };
@@ -41,7 +40,6 @@
 		0416CFBF2B20B56000F81AFE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0416CFC12B20B56300F81AFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0416CFC42B20B56300F81AFE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		0416CFC62B20B56300F81AFE /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		0416CFC92B20B56300F81AFE /* plusFM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = plusFM.xcdatamodel; sourceTree = "<group>"; };
 		0416CFCB2B20B56300F81AFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0416CFD02B20B56300F81AFE /* plusFMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = plusFMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,7 +100,6 @@
 				0416CFBD2B20B56000F81AFE /* plusFMApp.swift */,
 				0416CFBF2B20B56000F81AFE /* ContentView.swift */,
 				0416CFC12B20B56300F81AFE /* Assets.xcassets */,
-				0416CFC62B20B56300F81AFE /* Persistence.swift */,
 				0416CFCB2B20B56300F81AFE /* Info.plist */,
 				0416CFC82B20B56300F81AFE /* plusFM.xcdatamodeld */,
 				0416CFC32B20B56300F81AFE /* Preview Content */,
@@ -265,7 +262,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0416CFC72B20B56300F81AFE /* Persistence.swift in Sources */,
 				0416CFC02B20B56000F81AFE /* ContentView.swift in Sources */,
 				0416CFCA2B20B56300F81AFE /* plusFM.xcdatamodeld in Sources */,
 				0416CFBE2B20B56000F81AFE /* plusFMApp.swift in Sources */,
