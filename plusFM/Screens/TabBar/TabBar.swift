@@ -54,6 +54,7 @@ struct TabBar: View {
                     }
                 }
             }
+            
             Spacer()
             
             //MARK: - More

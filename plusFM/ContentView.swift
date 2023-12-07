@@ -24,6 +24,9 @@ struct ContentView: View {
                 NoView()
             }
             VStack{
+                
+                NavigationBar(isPresented: .constant(false), isArrowHidden: true, isTextHidden: true, title: "")
+                
                 Spacer()
                 
                 TabBar(index: $tabBarItem)
@@ -31,7 +34,9 @@ struct ContentView: View {
         }
         .onAppear{
             setBackgroungUserDefault(background: "PlusFM")
-
+            setLanguageUserDefault(lang: "English")
+            setMuteSoundUserDefault(mute: false)
+            setPausedSoundUserDefault(pause: false)
         }
     }
 }
