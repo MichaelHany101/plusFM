@@ -17,7 +17,9 @@ struct AboutUs: View {
                 .background(Color("AppWhite"))
             
             RectSoundShape()
+                .padding(.bottom, 30)
             
+            VStack(alignment: .leading){
             Text("Plus FM was launched in Bahrain in November 2022")
                 .font(.system(size: 18, weight: .light))
                 .lineLimit(2)
@@ -26,8 +28,11 @@ struct AboutUs: View {
             Text("To advertise with is, please contact Group Plus 00973 39 477 727")
                 .font(.system(size: 18, weight: .light))
                 .lineLimit(2)
+        }
             
             Spacer()
+            
+            TabBar(index: .constant(2))
         }
         .background(Color("AppGray"))
     }

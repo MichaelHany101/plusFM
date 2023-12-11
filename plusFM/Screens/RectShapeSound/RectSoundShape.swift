@@ -9,6 +9,9 @@ import SwiftUI
 
 struct RectSoundShape: View {
     
+    @State private var soundMuted : Bool = true
+    @State private var recordProcess : Bool = true
+    
     var body: some View {
         ZStack{
             //MARK: - Signal Image
@@ -16,14 +19,16 @@ struct RectSoundShape: View {
                 .resizable()
                 .padding(.leading, 55)
                 .padding(.trailing, 60)
-                .padding(.vertical)
+                .padding(.vertical, 30)
             
             HStack{
                 //MARK: - Sound Button
                 Button(action: {
                     setMuteSoundUserDefault(mute: getMuteSoundUserDefault() ? false : true)
+                    
+                    soundMuted = getMuteSoundUserDefault()
                 }){
-                    Image(getMuteSoundUserDefault() ? "SoundOff" : "SoundOn")
+                    Image(soundMuted ? "SoundOff" : "SoundOn")
                 }
                 .padding(.leading, -35)
                 .padding(.top)
@@ -33,14 +38,16 @@ struct RectSoundShape: View {
                 //MARK: - Record Button
                 Button(action: {
                     setRecordProcessUserDefault(state: getRecordProcessUserDefault() ? false : true)
+                    
+                    recordProcess = getRecordProcessUserDefault()
                 }){
-                    Image(getRecordProcessUserDefault() ? "RecordOff" : "RecordOn")
+                    Image(recordProcess ? "RecordOff" : "RecordOn")
                 }
                 .padding(.trailing, -10)
                 .padding(.top)
             }
         }
-        .frame(width: .infinity, height: 80)
+        .frame(width: .infinity, height: 65)
         .padding()
         .background(Color("AppWhite"))
         .cornerRadius(25)
@@ -50,6 +57,10 @@ struct RectSoundShape: View {
                 .foregroundColor(Color("AppPink").opacity(2))
                 .blur(radius: 2)
         )
+        .onAppear{
+            soundMuted = getMuteSoundUserDefault()
+            recordProcess = getRecordProcessUserDefault()
+        }
     }
 }
 

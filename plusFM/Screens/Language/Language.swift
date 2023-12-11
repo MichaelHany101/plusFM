@@ -10,6 +10,7 @@ import SwiftUI
 struct Language: View {
     
     @Binding var isPresented: Bool
+    @State private var language : String = "English"
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -23,9 +24,11 @@ struct Language: View {
                 //MARK: - English
                 Button(action: {
                     setLanguageUserDefault(lang: "English")
+                    
+                    language = getLanguageUserDefault()
                 }){
                     HStack{
-                        Image(getLanguageUserDefault() == "English" ? "Check" : "")
+                        Image(language == "English" ? "Check" : "")
                             .resizable()
                             .frame(width: 15, height: 15)
                             .padding(.trailing, 20)
@@ -40,9 +43,11 @@ struct Language: View {
                 //MARK: - العربية
                 Button(action: {
                     setLanguageUserDefault(lang: "العربية")
+                    
+                    language = getLanguageUserDefault()
                 }){
                     HStack{
-                        Image(getLanguageUserDefault() == "العربية" ? "Check" : "")
+                        Image(language == "العربية" ? "Check" : "")
                             .resizable()
                             .frame(width: 15, height: 15)
                             .padding(.trailing, 20)
@@ -57,8 +62,13 @@ struct Language: View {
             .padding(.leading, 15)
             
             Spacer()
+            
+            TabBar(index: .constant(2))
         }
         .background(Color("AppGray"))
+        .onAppear{
+            language = getLanguageUserDefault()
+        }
     }
 }
 

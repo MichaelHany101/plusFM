@@ -30,12 +30,24 @@ struct NavigationBar: View {
             Spacer()
             
             HStack{
-                Image("NavOne")
-                    .padding(.trailing, 15)
-                
-                Image("NavTwo")
-                    .padding(.leading, 15)
+                Button(action: {
+                    //Code
+                }){
+                    Image("NavOne")
+                        .padding(.trailing, 15)
+                        .frame(width: 15, height: 15)
+                }
+                Spacer()
+                Button(action: {
+                    //Code
+                }){
+                    Image("NavTwo")
+                        .padding(.leading, 15)
+                        .frame(width: 15, height: 15)
+                }
             }
+            .frame().frame(width: 60, height: 120)
+            .padding(.trailing, 20)
         }
         .frame(width: .infinity, height: 120)
         .background(Color.clear)
