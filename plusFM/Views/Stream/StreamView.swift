@@ -10,7 +10,8 @@ import SwiftUI
 struct StreamView: View {
     
     @Binding var background : String
-    
+    @State private var isLibraryPresented = false
+
     var body: some View {
         ZStack{
             Image(background)
@@ -21,7 +22,11 @@ struct StreamView: View {
                 .mask(LinearGradient(gradient: Gradient(colors: [.clear, .white]), startPoint: .bottom, endPoint: .top))
             
             VStack{
+                NavigationBar(isPresented: .constant(false), isArrowHidden: true, isTextHidden: true, title: "")
                 
+                SquareShapeSound(isLibraryPresented: $isLibraryPresented)
+                
+                Spacer()
             }
         }
         .onAppear{

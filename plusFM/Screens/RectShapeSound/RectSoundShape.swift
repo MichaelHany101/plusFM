@@ -15,8 +15,9 @@ struct RectSoundShape: View {
     var body: some View {
         ZStack{
             //MARK: - Signal Image
-            Image(getPausedSoundUserDefault() ? "StreamOff" : "StreamOn")
+            Image(getStreamStateUserDefault() ? "StreamOn" : "StreamOff")
                 .resizable()
+                .scaledToFit()
                 .padding(.leading, 55)
                 .padding(.trailing, 60)
                 .padding(.vertical, 30)

@@ -39,11 +39,11 @@ extension View {
     }
     
     //MARK: - Paused
-    func setPausedSoundUserDefault(pause : Bool) {
+    func setStreamStateUserDefault(pause : Bool) {
         UserDefaults.standard.set(pause, forKey: "Paused")
     }
     
-    func getPausedSoundUserDefault() -> Bool {
+    func getStreamStateUserDefault() -> Bool {
         let paused = UserDefaults.standard.bool(forKey: "Paused")
         return paused
     }

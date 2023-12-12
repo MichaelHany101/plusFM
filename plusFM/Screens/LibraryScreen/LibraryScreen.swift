@@ -11,6 +11,7 @@ struct LibraryScreen: View {
     
     @Binding var isPresented: Bool
     @State private var downloadedRecords : Bool = false
+    
     var body: some View {
         VStack{
             NavigationBar(isPresented: $isPresented, isArrowHidden: false, isTextHidden: false, title: "Library")

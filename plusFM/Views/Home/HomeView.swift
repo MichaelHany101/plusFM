@@ -24,11 +24,12 @@ struct HomeView: View {
             
             VStack{
                 NavigationBar(isPresented: .constant(false), isArrowHidden: true, isTextHidden: true, title: "")
-                    .padding(.bottom, 35)
+                    //.padding(.bottom, 35)
                 
-                SquareShapeSound()
-                    .padding(.bottom, 90)
+                SquareShapeSound(isLibraryPresented: $isLibraryPresented)
+                    //.padding(.bottom, 90)
                 
+                //MARK: - Libraries & Themes
                 HStack{
                     Button {
                         isLibraryPresented.toggle()
