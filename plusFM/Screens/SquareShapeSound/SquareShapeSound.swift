@@ -11,10 +11,10 @@ struct SquareShapeSound: View {
     
     @Binding var isLibraryPresented : Bool
     @State private var soundMuted : Bool = false
-    @State private var streamProcess : Bool = false
     @State private var recordProcess : Bool = false
     @State private var value: Double = 0.6
     @State private var realValue : Double = 0
+    @StateObject private var audioPlayerManager = AudioPlayerManager()
     
     var body: some View {
         VStack{
@@ -37,9 +37,7 @@ struct SquareShapeSound: View {
                 
                 //MARK: - Stream
                 Button(action: {
-                    setStreamStateUserDefault(pause: getStreamStateUserDefault() ? false : true)
-                    
-                    streamProcess = getStreamStateUserDefault()
+                    audioPlayerManager.isPlaying ? audioPlayerManager.pause() : audioPlayerManager.play()
                 }){
                     ZStack{
                         Image("PlusFM-Boarder")
@@ -48,8 +46,7 @@ struct SquareShapeSound: View {
                             .clipShape(Circle())
                             .overlay(
                                 Circle()
-                                    .stroke(streamProcess ? Color("AppOrange") : Color.clear, lineWidth: 5)
-                                //.stroke(, lineWidth: 5)
+                                    .stroke(audioPlayerManager.isPlaying ? Color("AppOrange") : Color.clear, lineWidth: 5)
                             )
                         
                         Image("Logo")
@@ -118,7 +115,6 @@ struct SquareShapeSound: View {
         }
         .onAppear{
             soundMuted = getMuteSoundUserDefault()
-            streamProcess = getStreamStateUserDefault()
             recordProcess = getRecordProcessUserDefault()
         }
     }

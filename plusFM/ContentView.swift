@@ -36,7 +36,7 @@ struct ContentView: View {
             //setBackgroungUserDefault(background: "\(getBackgroundUserDefault())")
             //setLanguageUserDefault(lang: "English")
             //setMuteSoundUserDefault(mute: false)
-            //setPausedSoundUserDefault(pause: false)
+            //setStreamStateUserDefault(pause: false)
         }
     }
 }

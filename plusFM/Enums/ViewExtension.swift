@@ -38,16 +38,6 @@ extension View {
         return muted
     }
     
-    //MARK: - Paused
-    func setStreamStateUserDefault(pause : Bool) {
-        UserDefaults.standard.set(pause, forKey: "Paused")
-    }
-    
-    func getStreamStateUserDefault() -> Bool {
-        let paused = UserDefaults.standard.bool(forKey: "Paused")
-        return paused
-    }
-    
     //MARK: - Record Process
     func setRecordProcessUserDefault(state : Bool) {
         UserDefaults.standard.set(state, forKey: "State")

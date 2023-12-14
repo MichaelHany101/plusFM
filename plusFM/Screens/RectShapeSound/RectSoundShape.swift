@@ -11,11 +11,12 @@ struct RectSoundShape: View {
     
     @State private var soundMuted : Bool = true
     @State private var recordProcess : Bool = true
+    @StateObject private var audioPlayerManager = AudioPlayerManager()
     
     var body: some View {
         ZStack{
             //MARK: - Signal Image
-            Image(getStreamStateUserDefault() ? "StreamOn" : "StreamOff")
+            Image(audioPlayerManager.isPlaying ? "StreamOn" : "StreamOff")
                 .resizable()
                 .scaledToFit()
                 .padding(.leading, 55)

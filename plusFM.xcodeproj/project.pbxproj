@@ -34,6 +34,7 @@
 		0416D02D2B226C6B00F81AFE /* ThemesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416D02C2B226C6B00F81AFE /* ThemesScreen.swift */; };
 		0416D0302B226D7E00F81AFE /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416D02F2B226D7E00F81AFE /* Themes.swift */; };
 		0416D0332B2402D100F81AFE /* LibraryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416D0322B2402D100F81AFE /* LibraryScreen.swift */; };
+		0499BC052B28CA5F00CD7B9A /* AudioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499BC042B28CA5F00CD7B9A /* AudioPlayerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		0416D02C2B226C6B00F81AFE /* ThemesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesScreen.swift; sourceTree = "<group>"; };
 		0416D02F2B226D7E00F81AFE /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 		0416D0322B2402D100F81AFE /* LibraryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryScreen.swift; sourceTree = "<group>"; };
+		0499BC042B28CA5F00CD7B9A /* AudioPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 		0416CFF12B20F1A100F81AFE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0499BC032B28CA5400CD7B9A /* AudioPlayer */,
 				0416CFF22B20F1B600F81AFE /* TabBar */,
 				0416D0112B21520E00F81AFE /* NavigationBar */,
 				0416D01A2B22014800F81AFE /* AboutUs */,
@@ -325,6 +328,14 @@
 			path = LibraryScreen;
 			sourceTree = "<group>";
 		};
+		0499BC032B28CA5400CD7B9A /* AudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				0499BC042B28CA5F00CD7B9A /* AudioPlayerManager.swift */,
+			);
+			path = AudioPlayer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -463,6 +474,7 @@
 				0416D0102B2127FE00F81AFE /* RectSoundShape.swift in Sources */,
 				0416D0132B21522C00F81AFE /* NavigationBar.swift in Sources */,
 				0416D0052B21188B00F81AFE /* StreamView.swift in Sources */,
+				0499BC052B28CA5F00CD7B9A /* AudioPlayerManager.swift in Sources */,
 				0416CFCA2B20B56300F81AFE /* plusFM.xcdatamodeld in Sources */,
 				0416CFBE2B20B56000F81AFE /* plusFMApp.swift in Sources */,
 				0416D0192B216C5B00F81AFE /* SocialMedia.swift in Sources */,
