@@ -9,14 +9,14 @@ import SwiftUI
 
 struct RectSoundShape: View {
     
-    @State private var soundMuted : Bool = true
+    @State private var soundMuted : Bool = false
     @State private var recordProcess : Bool = true
     @StateObject private var audioPlayerManager = AudioPlayerManager()
     
     var body: some View {
         ZStack{
             //MARK: - Signal Image
-            Image(audioPlayerManager.isPlaying ? "StreamOn" : "StreamOff")
+            Image(getStreamStateUserDefault() ? "StreamOn" : "StreamOff")
                 .resizable()
                 .scaledToFit()
                 .padding(.leading, 55)
@@ -27,10 +27,9 @@ struct RectSoundShape: View {
                 //MARK: - Sound Button
                 Button(action: {
                     setMuteSoundUserDefault(mute: getMuteSoundUserDefault() ? false : true)
-                    
-                    soundMuted = getMuteSoundUserDefault()
+                    checkMuted()
                 }){
-                    Image(soundMuted ? "SoundOff" : "SoundOn")
+                    Image(getMuteSoundUserDefault() ? "SoundOff" : "SoundOn")
                 }
                 .padding(.leading, -35)
                 .padding(.top)
@@ -60,8 +59,26 @@ struct RectSoundShape: View {
                 .blur(radius: 2)
         )
         .onAppear{
-            soundMuted = getMuteSoundUserDefault()
+            playOrPause()
+            checkMuted()
             recordProcess = getRecordProcessUserDefault()
+        }
+    }
+    
+    func checkMuted() {
+        if getMuteSoundUserDefault(){
+            audioPlayerManager.setVolume(0)
+        }else {
+            audioPlayerManager.setVolume(getVolumeValueUserDefault())
+        }
+    }
+    
+    func playOrPause() {
+        if (getStreamStateUserDefault()){
+            audioPlayerManager.play()
+        }
+        else{
+            audioPlayerManager.pause()
         }
     }
 }

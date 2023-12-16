@@ -38,6 +38,26 @@ extension View {
         return muted
     }
     
+    //MARK: - Volume Level
+    func setVolumeValueUserDefault(volume : Float) {
+        UserDefaults.standard.setValue(volume, forKey: "Volume")
+    }
+    
+    func getVolumeValueUserDefault() -> Float {
+        let volume = UserDefaults.standard.float(forKey: "Volume")
+        return volume
+    }
+    
+    //MARK: - Play Stream
+    func setStreamStateUserDefault(play : Bool) {
+        UserDefaults.standard.set(play, forKey: "Play")
+    }
+    
+    func getStreamStateUserDefault() -> Bool {
+        let play = UserDefaults.standard.bool(forKey: "Play")
+        return play
+    }
+    
     //MARK: - Record Process
     func setRecordProcessUserDefault(state : Bool) {
         UserDefaults.standard.set(state, forKey: "State")

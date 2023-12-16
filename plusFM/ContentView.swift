@@ -15,7 +15,7 @@ struct ContentView: View {
         ZStack{
             switch tabBarItem {
             case 0:
-                HomeView(background: .constant("\(getBackgroundUserDefault())"))
+                HomeView(background: "\(getBackgroundUserDefault())")
             case 1:
                 StreamView(background: .constant("\(getBackgroundUserDefault())"))
             case 2:
@@ -33,10 +33,11 @@ struct ContentView: View {
             }
         }
         .onAppear{
-            //setBackgroungUserDefault(background: "\(getBackgroundUserDefault())")
-            //setLanguageUserDefault(lang: "English")
-            //setMuteSoundUserDefault(mute: false)
-            //setStreamStateUserDefault(pause: false)
+            setBackgroungUserDefault(background: "\(getBackgroundUserDefault())")
+            setLanguageUserDefault(lang: "English")
+            setMuteSoundUserDefault(mute: false)
+            setStreamStateUserDefault(play: true)
+            setVolumeValueUserDefault(volume: 0.5)
         }
     }
 }

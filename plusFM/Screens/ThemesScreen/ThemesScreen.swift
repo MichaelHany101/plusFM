@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ThemesScreen: View {
     
-    @Binding var isPresented: Bool
-    @State private var background : String = "PlusFM"
+    @Binding var isPresented : Bool
+    @Binding var background : String
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -94,6 +94,6 @@ struct ThemesScreen: View {
 
 struct ThemesScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ThemesScreen(isPresented: .constant(false))
+        ThemesScreen(isPresented: .constant(false), background: .constant("PlusFM"))
     }
 }
