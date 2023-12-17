@@ -15,7 +15,7 @@ struct ContentView: View {
         ZStack{
             switch tabBarItem {
             case 0:
-                HomeView(background: "\(getBackgroundUserDefault())")
+                HomeView(background: "\(getBackgroundUserDefault())", index: $tabBarItem)
             case 1:
                 StreamView(background: .constant("\(getBackgroundUserDefault())"))
             case 2:

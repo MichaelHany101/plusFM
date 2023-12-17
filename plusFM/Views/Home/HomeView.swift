@@ -12,6 +12,7 @@ struct HomeView: View {
     @State private var isThemesPresented = false
     @State private var isLibraryPresented = false
     @State var background : String
+    @Binding var index : Int
     
     var body: some View {
         ZStack{
@@ -46,7 +47,7 @@ struct HomeView: View {
                         HomeGridItem(icon: "Themes", name: "Themes")
                     }
                     .fullScreenCover(isPresented: $isThemesPresented){
-                        ThemesScreen(isPresented: $isThemesPresented, background: $background)
+                        ThemesScreen(isPresented: $isThemesPresented, background: $background, index: $index)
                     }
                 }
                 .padding(.horizontal, 30)
@@ -62,6 +63,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(background: "PlusFM")
+        HomeView(background: "PlusFM", index: .constant(0))
     }
 }
