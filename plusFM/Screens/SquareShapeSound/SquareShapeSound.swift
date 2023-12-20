@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct SquareShapeSound: View {
     
+    @ObservedObject var audioRecorder: AudioRecorder
     @Binding var isLibraryPresented : Bool
-    @State private var recordProcess : Bool = false
     @State private var value: Float = 0.6
     @State private var realValue : Float = 0.5
     @StateObject private var audioPlayerManager = AudioPlayerManager()
@@ -86,11 +87,11 @@ struct SquareShapeSound: View {
             HStack(spacing: -20){
                 //MARK: - Record
                 Button(action: {
-                    setRecordProcessUserDefault(state: getRecordProcessUserDefault() ? false : true)
+                    setIsRecordingUserDefault(state: getIsRecordingUserDefault() ? false : true)
                     
-                    recordProcess = getRecordProcessUserDefault()
+                    recordOrStop()
                 }){
-                    Image(recordProcess ? "RecordOff" : "RecordOn")
+                    Image(getIsRecordingUserDefault() ? "RecordOff" : "RecordOn")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 90, height: 90)
@@ -121,7 +122,7 @@ struct SquareShapeSound: View {
                         .clipShape(Circle())
                 }
                 .fullScreenCover(isPresented: $isLibraryPresented){
-                    LibraryScreen(isPresented: $isLibraryPresented)
+                    LibraryScreen(audioRecorder: AudioRecorder(), isPresented: $isLibraryPresented)
                 }
             }
             .padding(.top, -30)
@@ -130,10 +131,10 @@ struct SquareShapeSound: View {
             playOrPause()
             realValue = getVolumeValueUserDefault()
             //realValue = 0.05
-            recordProcess = getRecordProcessUserDefault()
         }
     }
     
+    //MARK: - Functions
     func playOrPause() {
         if (getStreamStateUserDefault()){
             audioPlayerManager.play()
@@ -142,9 +143,19 @@ struct SquareShapeSound: View {
             audioPlayerManager.pause()
         }
     }
+    
+    func recordOrStop(){
+        if (getIsRecordingUserDefault()){
+            self.audioRecorder.startRecording()
+        }
+        else{
+            self.audioRecorder.stopRecording()
+        }
+    }
 }
+
 struct SquareShapeSound_Previews: PreviewProvider {
     static var previews: some View {
-        SquareShapeSound(isLibraryPresented: .constant(false))
+        SquareShapeSound(audioRecorder: AudioRecorder(), isLibraryPresented: .constant(false))
     }
 }

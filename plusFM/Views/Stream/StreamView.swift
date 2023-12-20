@@ -24,7 +24,7 @@ struct StreamView: View {
             VStack{
                 NavigationBar(isPresented: .constant(false), isArrowHidden: true, isTextHidden: true, title: "")
                 
-                SquareShapeSound(isLibraryPresented: $isLibraryPresented)
+                SquareShapeSound(audioRecorder: AudioRecorder(), isLibraryPresented: $isLibraryPresented)
                 
                 Spacer()
             }

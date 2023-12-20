@@ -15,7 +15,7 @@ struct MoreView: View {
     var body: some View {
         
         VStack{
-            RectSoundShape()
+            RectSoundShape(audioRecorder: AudioRecorder())
                 .padding(.top, 120)
             
             VStack(alignment: .leading){

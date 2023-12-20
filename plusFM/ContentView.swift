@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var tabBarItem = 1
+    @ObservedObject var audioRecorder: AudioRecorder
     
     var body: some View {
         ZStack{
@@ -38,12 +39,19 @@ struct ContentView: View {
             setMuteSoundUserDefault(mute: false)
             setStreamStateUserDefault(play: true)
             setVolumeValueUserDefault(volume: 0.5)
+            setIsRecordingUserDefault(state: false)
+            if (audioRecorder.recordings == []) {
+                setIsThereRecordUserDefault(exist: false)
+            }
+            else {
+                setIsThereRecordUserDefault(exist: true)
+            }
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(audioRecorder: AudioRecorder())
     }
 }

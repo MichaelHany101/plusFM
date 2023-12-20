@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct ThemesScreen: View {
-    
+
+    @State private var isImagePickerPresented = false
+    @State private var selectedImage: UIImage? = nil
     @Binding var isPresented : Bool
     @Binding var background : String
     @Binding var index : Int
+    var imagePickerCoordinator : ImagePickerCoordinator?
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack{
             NavigationBar(isPresented: $isPresented, isArrowHidden: false, isTextHidden: false, title: "Themes")
             
-            RectSoundShape()
+            RectSoundShape(audioRecorder: AudioRecorder())
             
             Group{
                 HStack{
@@ -75,8 +78,9 @@ struct ThemesScreen: View {
             .padding(.horizontal, 15)
             .padding(.bottom, 15)
             
+            //MARK: - Add Custom Theme
             Button(action: {
-                //Code
+                isImagePickerPresented.toggle()
             }){
                 ZStack{
                     RoundedRectangle(cornerRadius: 25)
@@ -87,6 +91,16 @@ struct ThemesScreen: View {
                         .foregroundColor(Color("AppWhite"))
                         .font(.system(size: 18, weight: .semibold))
                 }
+            }
+            .sheet(isPresented: $isImagePickerPresented, onDismiss: {
+                if let selectedImage = selectedImage {
+                    
+                    background = getBackgroundUserDefault()
+                    index = 1
+                    presentationMode.wrappedValue.dismiss()
+                }
+            }) {
+                let imagePicker = ImagePicker(image: $selectedImage)
             }
             
             Spacer()

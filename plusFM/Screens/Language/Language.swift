@@ -17,7 +17,7 @@ struct Language: View {
             NavigationBar(isPresented: $isPresented, isArrowHidden: false, isTextHidden: false, title: "Language")
                 .background(Color("AppWhite"))
             
-            RectSoundShape()
+            RectSoundShape(audioRecorder: AudioRecorder())
                 .padding(.bottom, 30)
             
             VStack{

@@ -12,7 +12,7 @@ struct plusFMApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(audioRecorder: AudioRecorder())
         }
     }
 }

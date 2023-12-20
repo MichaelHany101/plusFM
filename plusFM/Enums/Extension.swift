@@ -1,12 +1,14 @@
 //
-//  ViewExtension.swiftUI
+//  Extension.swiftUI
 //  plusFM
 //
 //  Created by Michael Hany on 06/12/2023.
 //
 
 import SwiftUI
+import Foundation
 
+//MARK: - View Extension/ User Default
 extension View {
     //MARK: - Language
     func setLanguageUserDefault(lang : String) {
@@ -26,6 +28,16 @@ extension View {
     func getBackgroundUserDefault() -> String {
         let backgroundImage = UserDefaults.standard.string(forKey: "Background")
         return backgroundImage ?? "PlusFM"
+    }
+    
+    //MARK: - Custom Background Image
+    func setCustomBackgroungUserDefault(data : Data) {
+        UserDefaults.standard.set(data, forKey: "Data")
+    }
+    
+    func getCustomBackgroundUserDefault() -> Data {
+        let backgroundImage = UserDefaults.standard.data(forKey: "Data")
+        return backgroundImage!
     }
     
     //MARK: - Mute
@@ -59,12 +71,34 @@ extension View {
     }
     
     //MARK: - Record Process
-    func setRecordProcessUserDefault(state : Bool) {
+    func setIsRecordingUserDefault(state : Bool) {
         UserDefaults.standard.set(state, forKey: "State")
     }
     
-    func getRecordProcessUserDefault() -> Bool {
+    func getIsRecordingUserDefault() -> Bool {
         let state = UserDefaults.standard.bool(forKey: "State")
         return state
     }
+    
+    //MARK: - Is There Record
+    func setIsThereRecordUserDefault(exist : Bool) {
+        UserDefaults.standard.set(exist, forKey: "Exist")
+    }
+    
+    func getIsThereRecordUserDefault() -> Bool {
+        let exist = UserDefaults.standard.bool(forKey: "Exist")
+        return exist
+    }
+}
+
+//MARK: - Date Extension
+extension Date
+{
+    func toString(dateFormat format: String ) -> String
+    {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: self)
+    }
+
 }

@@ -9,9 +9,8 @@ import SwiftUI
 
 struct RectSoundShape: View {
     
-    @State private var soundMuted : Bool = false
-    @State private var recordProcess : Bool = true
     @StateObject private var audioPlayerManager = AudioPlayerManager()
+    @ObservedObject var audioRecorder: AudioRecorder
     
     var body: some View {
         ZStack{
@@ -38,11 +37,10 @@ struct RectSoundShape: View {
                 
                 //MARK: - Record Button
                 Button(action: {
-                    setRecordProcessUserDefault(state: getRecordProcessUserDefault() ? false : true)
-                    
-                    recordProcess = getRecordProcessUserDefault()
+                    setIsRecordingUserDefault(state: getIsRecordingUserDefault() ? false : true)
+                    recordOrStop()
                 }){
-                    Image(recordProcess ? "RecordOff" : "RecordOn")
+                    Image(getIsRecordingUserDefault() ? "RecordOff" : "RecordOn")
                 }
                 .padding(.trailing, -10)
                 .padding(.top)
@@ -61,10 +59,10 @@ struct RectSoundShape: View {
         .onAppear{
             playOrPause()
             checkMuted()
-            recordProcess = getRecordProcessUserDefault()
         }
     }
     
+    //MARK: - Functions
     func checkMuted() {
         if getMuteSoundUserDefault(){
             audioPlayerManager.setVolume(0)
@@ -81,10 +79,19 @@ struct RectSoundShape: View {
             audioPlayerManager.pause()
         }
     }
+    
+    func recordOrStop(){
+        if (getIsRecordingUserDefault()){
+            self.audioRecorder.startRecording()
+        }
+        else{
+            self.audioRecorder.stopRecording()
+        }
+    }
 }
 
 struct RectSoundShape_Previews: PreviewProvider {
     static var previews: some View {
-        RectSoundShape()
+        RectSoundShape(audioRecorder: AudioRecorder())
     }
 }

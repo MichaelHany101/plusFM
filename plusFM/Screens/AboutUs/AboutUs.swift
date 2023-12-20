@@ -16,7 +16,7 @@ struct AboutUs: View {
             NavigationBar(isPresented: $isPresented, isArrowHidden: false, isTextHidden: false, title: "About us")
                 .background(Color("AppWhite"))
             
-            RectSoundShape()
+            RectSoundShape(audioRecorder: AudioRecorder())
                 .padding(.bottom, 30)
             
             VStack(alignment: .leading){

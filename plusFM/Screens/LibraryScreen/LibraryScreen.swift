@@ -9,25 +9,30 @@ import SwiftUI
 
 struct LibraryScreen: View {
     
+    @ObservedObject var audioRecorder: AudioRecorder
     @Binding var isPresented: Bool
-    @State private var downloadedRecords : Bool = false
     
     var body: some View {
         VStack{
             NavigationBar(isPresented: $isPresented, isArrowHidden: false, isTextHidden: false, title: "Library")
             
-            RectSoundShape()
-                .padding(.bottom, 190)
-
-            if(!downloadedRecords){
+            RectSoundShape(audioRecorder: AudioRecorder())
+            
+            if(getIsThereRecordUserDefault()){
+                ScrollView{
+                    VStack{
+                        ForEach(audioRecorder.recordings, id: \.createdAt) { recording in
+                            LibraryCell(recordURL: recording.fileURL, audioRecorder: audioRecorder, name: "Name", date: "Date", time: "Time")
+                        }
+                    }
+                }
+            }
+            else{
                 Group{
                     Text("Your library is empty.")
                     Text("Record your favourite tracks!")
                 }
                 .font(.system(size: 18, weight: .semibold))
-            }
-            else{
-                //here will be the code of library list
             }
             
             Spacer()
@@ -39,6 +44,6 @@ struct LibraryScreen: View {
 
 struct LibraryScreen_Previews: PreviewProvider {
     static var previews: some View {
-        LibraryScreen(isPresented: .constant(false))
+        LibraryScreen(audioRecorder: AudioRecorder(), isPresented: .constant(false))
     }
 }

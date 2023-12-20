@@ -13,21 +13,31 @@ struct HomeView: View {
     @State private var isLibraryPresented = false
     @State var background : String
     @Binding var index : Int
-    
+
     var body: some View {
         ZStack{
-            Image(background)
-                .resizable()
-                .edgesIgnoringSafeArea(.all)
-                .opacity(0.9)
-                .frame(width: .infinity, height: .infinity, alignment: .center)
-                .mask(LinearGradient(gradient: Gradient(colors: [.clear, .white]), startPoint: .bottom, endPoint: .top))
+            if (background == "Custom") {
+                Image(uiImage: UIImage(data: getCustomBackgroundUserDefault())!)
+                    .resizable()
+                    .edgesIgnoringSafeArea(.all)
+                    .opacity(0.9)
+                    .frame(width: .infinity, height: .infinity, alignment: .center)
+                    .mask(LinearGradient(gradient: Gradient(colors: [.clear, .white]), startPoint: .bottom, endPoint: .top))
+            }
+            else {
+                Image(background)
+                    .resizable()
+                    .edgesIgnoringSafeArea(.all)
+                    .opacity(0.9)
+                    .frame(width: .infinity, height: .infinity, alignment: .center)
+                    .mask(LinearGradient(gradient: Gradient(colors: [.clear, .white]), startPoint: .bottom, endPoint: .top))
+            }
             
             VStack{
                 NavigationBar(isPresented: .constant(false), isArrowHidden: true, isTextHidden: true, title: "")
                     //.padding(.bottom, 35)
                 
-                SquareShapeSound(isLibraryPresented: $isLibraryPresented)
+                SquareShapeSound(audioRecorder: AudioRecorder(), isLibraryPresented: $isLibraryPresented)
                     //.padding(.bottom, 90)
                 
                 //MARK: - Libraries & Themes
@@ -38,7 +48,7 @@ struct HomeView: View {
                         HomeGridItem(icon: "Libraries", name: "Libraries")
                     }
                     .fullScreenCover(isPresented: $isLibraryPresented){
-                        LibraryScreen(isPresented: $isLibraryPresented)
+                        LibraryScreen(audioRecorder: AudioRecorder(), isPresented: $isLibraryPresented)
                     }
                     
                     Button(action: {
