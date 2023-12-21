@@ -12,6 +12,7 @@ struct LibraryCell: View {
     var recordURL: URL
     @ObservedObject var recordPlayer = RecordPlayer()
     @ObservedObject var audioRecorder: AudioRecorder
+    @Binding var customPopUp: Bool
     @State var name : String
     @State var date : String
     @State var time : String
@@ -56,7 +57,7 @@ struct LibraryCell: View {
             
             VStack{
                 Button(action: {
-                    
+                    customPopUp.toggle()
                 }){
                     Image("More-Selected")
                         .resizable()
@@ -67,6 +68,13 @@ struct LibraryCell: View {
                     .font(.system(size: 16, weight: .regular))
             }
             .padding(.trailing, 30)
+        }
+        .onAppear{
+            print("Michael \(recordURL)")
+            let audioName = (recordURL.lastPathComponent).components(separatedBy: String(" at "))
+//            date = audioName[0]
+//            time = audioName[1]
+//            name = audioName[2]
         }
     }
     

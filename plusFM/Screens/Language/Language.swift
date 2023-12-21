@@ -10,64 +10,71 @@ import SwiftUI
 struct Language: View {
     
     @Binding var isPresented: Bool
+    @State var customAlert = false
     @State private var language : String = "English"
-
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            NavigationBar(isPresented: $isPresented, isArrowHidden: false, isTextHidden: false, title: "Language")
-                .background(Color("AppWhite"))
-            
-            RectSoundShape(audioRecorder: AudioRecorder())
-                .padding(.bottom, 30)
-            
-            VStack{
-                //MARK: - English
-                Button(action: {
-                    setLanguageUserDefault(lang: "English")
-                    
-                    language = getLanguageUserDefault()
-                }){
-                    HStack{
-                        Image(language == "English" ? "Check" : "")
-                            .resizable()
-                            .frame(width: 15, height: 15)
-                            .padding(.trailing, 20)
-                        
-                        Text("English")
-                            .font(.system(size: 22, weight: getLanguageUserDefault() == "English" ? .semibold : .regular))
-                            .foregroundColor(Color("AppBlack"))
-                    }
-                }
-                .padding(.bottom, 20)
+        ZStack{
+            VStack(alignment: .leading) {
+                NavigationBar(isPresented: $isPresented, isArrowHidden: false, isTextHidden: false, title: "Language")
+                    .background(Color("AppWhite"))
                 
-                //MARK: - العربية
-                Button(action: {
-                    setLanguageUserDefault(lang: "العربية")
-                    
-                    language = getLanguageUserDefault()
-                }){
-                    HStack{
-                        Image(language == "العربية" ? "Check" : "")
-                            .resizable()
-                            .frame(width: 15, height: 15)
-                            .padding(.trailing, 20)
+                RectSoundShape(audioRecorder: AudioRecorder(), customAlert: $customAlert)
+                    .padding(.bottom, 30)
+                
+                VStack{
+                    //MARK: - English
+                    Button(action: {
+                        setLanguageUserDefault(lang: "English")
                         
-                        Text("العربية")
-                            .font(.system(size: 22, weight: getLanguageUserDefault() == "العربية" ? .semibold : .regular))
-                            .foregroundColor(Color("AppBlack"))
+                        language = getLanguageUserDefault()
+                    }){
+                        HStack{
+                            Image(language == "English" ? "Check" : "")
+                                .resizable()
+                                .frame(width: 15, height: 15)
+                                .padding(.trailing, 20)
+                            
+                            Text("English")
+                                .font(.system(size: 22, weight: getLanguageUserDefault() == "English" ? .semibold : .regular))
+                                .foregroundColor(Color("AppBlack"))
+                        }
+                    }
+                    .padding(.bottom, 20)
+                    
+                    //MARK: - العربية
+                    Button(action: {
+                        setLanguageUserDefault(lang: "العربية")
+                        
+                        language = getLanguageUserDefault()
+                    }){
+                        HStack{
+                            Image(language == "العربية" ? "Check" : "")
+                                .resizable()
+                                .frame(width: 15, height: 15)
+                                .padding(.trailing, 20)
+                            
+                            Text("العربية")
+                                .font(.system(size: 22, weight: getLanguageUserDefault() == "العربية" ? .semibold : .regular))
+                                .foregroundColor(Color("AppBlack"))
+                        }
                     }
                 }
+                .background(Color("AppGray"))
+                .padding(.leading, 15)
+                
+                Spacer()
+                
+                TabBar(index: .constant(2))
             }
             .background(Color("AppGray"))
-            .padding(.leading, 15)
+            .onAppear{
+                language = getLanguageUserDefault()
+            }
             
-            Spacer()
-            
-            TabBar(index: .constant(2))
-        }
-        .background(Color("AppGray"))
-        .onAppear{
-            language = getLanguageUserDefault()
+            if customAlert {
+                CustomAlert(show: $customAlert, audioRecorder: AudioRecorder())
+            }
         }
     }
 }

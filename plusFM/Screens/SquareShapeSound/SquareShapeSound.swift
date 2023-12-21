@@ -10,12 +10,13 @@ import AVKit
 
 struct SquareShapeSound: View {
     
+    @StateObject private var audioPlayerManager = AudioPlayerManager()
     @ObservedObject var audioRecorder: AudioRecorder
-    @Binding var isLibraryPresented : Bool
     @State private var value: Float = 0.6
     @State private var realValue : Float = 0.5
-    @StateObject private var audioPlayerManager = AudioPlayerManager()
-    
+    @Binding var isLibraryPresented : Bool
+    @Binding var customAlert : Bool
+
     var body: some View {
         VStack{
             ZStack{
@@ -150,12 +151,15 @@ struct SquareShapeSound: View {
         }
         else{
             self.audioRecorder.stopRecording()
+            withAnimation{
+                customAlert.toggle()
+            }
         }
     }
 }
 
 struct SquareShapeSound_Previews: PreviewProvider {
     static var previews: some View {
-        SquareShapeSound(audioRecorder: AudioRecorder(), isLibraryPresented: .constant(false))
+        SquareShapeSound(audioRecorder: AudioRecorder(), isLibraryPresented: .constant(false), customAlert: .constant(false))
     }
 }

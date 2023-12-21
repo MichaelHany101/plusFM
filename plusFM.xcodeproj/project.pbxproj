@@ -34,6 +34,8 @@
 		0416D02D2B226C6B00F81AFE /* ThemesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416D02C2B226C6B00F81AFE /* ThemesScreen.swift */; };
 		0416D0302B226D7E00F81AFE /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416D02F2B226D7E00F81AFE /* Themes.swift */; };
 		0416D0332B2402D100F81AFE /* LibraryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416D0322B2402D100F81AFE /* LibraryScreen.swift */; };
+		04503ECF2B33C8CD003EC8DC /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04503ECE2B33C8CD003EC8DC /* CustomAlert.swift */; };
+		04503ED22B33CCE0003EC8DC /* EditDeleteMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04503ED12B33CCE0003EC8DC /* EditDeleteMenu.swift */; };
 		048FBE9D2B311A30008974CA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FBE9C2B311A30008974CA /* ImagePicker.swift */; };
 		048FBEA42B327BE3008974CA /* LibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FBEA32B327BE3008974CA /* LibraryCell.swift */; };
 		048FBEA92B33428B008974CA /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FBEA82B33428B008974CA /* Helper.swift */; };
@@ -92,6 +94,8 @@
 		0416D02C2B226C6B00F81AFE /* ThemesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesScreen.swift; sourceTree = "<group>"; };
 		0416D02F2B226D7E00F81AFE /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 		0416D0322B2402D100F81AFE /* LibraryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryScreen.swift; sourceTree = "<group>"; };
+		04503ECE2B33C8CD003EC8DC /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		04503ED12B33CCE0003EC8DC /* EditDeleteMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDeleteMenu.swift; sourceTree = "<group>"; };
 		048FBE9C2B311A30008974CA /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		048FBEA32B327BE3008974CA /* LibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCell.swift; sourceTree = "<group>"; };
 		048FBEA82B33428B008974CA /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
@@ -203,6 +207,8 @@
 				0416D0252B223EC000F81AFE /* SquareShapeSound */,
 				0416D0282B223FC500F81AFE /* HomeGridItem */,
 				0416D0312B2402A800F81AFE /* LibraryScreen */,
+				04AC59D22B33880200ED5B71 /* CustomAlert */,
+				04503ED02B33CCBE003EC8DC /* EditDeleteMenu */,
 				0416D02B2B226C4200F81AFE /* ThemesScreen */,
 				0416D02E2B226D6A00F81AFE /* Themes */,
 			);
@@ -344,6 +350,14 @@
 			path = LibraryScreen;
 			sourceTree = "<group>";
 		};
+		04503ED02B33CCBE003EC8DC /* EditDeleteMenu */ = {
+			isa = PBXGroup;
+			children = (
+				04503ED12B33CCE0003EC8DC /* EditDeleteMenu.swift */,
+			);
+			path = EditDeleteMenu;
+			sourceTree = "<group>";
+		};
 		048FBE9B2B311A19008974CA /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +382,14 @@
 				0499BC042B28CA5F00CD7B9A /* AudioPlayerManager.swift */,
 			);
 			path = AudioPlayer;
+			sourceTree = "<group>";
+		};
+		04AC59D22B33880200ED5B71 /* CustomAlert */ = {
+			isa = PBXGroup;
+			children = (
+				04503ECE2B33C8CD003EC8DC /* CustomAlert.swift */,
+			);
+			path = CustomAlert;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -514,11 +536,13 @@
 				048FBEA42B327BE3008974CA /* LibraryCell.swift in Sources */,
 				0416CFBE2B20B56000F81AFE /* plusFMApp.swift in Sources */,
 				0416D0192B216C5B00F81AFE /* SocialMedia.swift in Sources */,
+				04503ED22B33CCE0003EC8DC /* EditDeleteMenu.swift in Sources */,
 				0416D02A2B223FE400F81AFE /* HomeGridItem.swift in Sources */,
 				048FBEAC2B3342C7008974CA /* RecordingDataModel.swift in Sources */,
 				0416D00D2B21214E00F81AFE /* Extension.swift in Sources */,
 				048FBE9D2B311A30008974CA /* ImagePicker.swift in Sources */,
 				0416D01C2B22016200F81AFE /* AboutUs.swift in Sources */,
+				04503ECF2B33C8CD003EC8DC /* CustomAlert.swift in Sources */,
 				0416CFF42B20F1CE00F81AFE /* TabBar.swift in Sources */,
 				0416D0302B226D7E00F81AFE /* Themes.swift in Sources */,
 				0416D02D2B226C6B00F81AFE /* ThemesScreen.swift in Sources */,

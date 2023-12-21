@@ -40,8 +40,8 @@ class AudioRecorder: NSObject, ObservableObject {
         }
         
         let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let audioFilename = documentPath.appendingPathComponent("\(Date().toString(dateFormat: "dd-MM-YY 'at' HH:mm:ss")).m4a")
-        
+        let audioFileName = documentPath.appendingPathComponent("\(Date().toString(dateFormat: "dd-MM-YYYY 'at' HH:mm")) at .m4a")
+        print("Michael \(documentPath)")
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 12000,
@@ -50,7 +50,7 @@ class AudioRecorder: NSObject, ObservableObject {
         ]
         
         do {
-            audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
+            audioRecorder = try AVAudioRecorder(url: audioFileName, settings: settings)
             audioRecorder.record()
 
             recording = true
@@ -94,5 +94,25 @@ class AudioRecorder: NSObject, ObservableObject {
         }
         
         fetchRecording()
+    }
+    
+    func editFullName() {
+        var documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        documentPath = documentPath.appendingPathComponent("\(Date().toString(dateFormat: "dd-MM-YYYY 'at' HH:mm")) at .m4a")
+        let audioName = documentPath.lastPathComponent
+        var audioNameSeparated = audioName.components(separatedBy: String(" at "))
+        audioNameSeparated[2] = "\(getRecordNameUserDefault()).m4a"
+        _ = documentPath.deletingLastPathComponent()
+        _ = documentPath.appendingPathComponent("\(audioNameSeparated[0]) at \(audioNameSeparated[1]) at \(audioNameSeparated[2])")
+    }
+    
+    //MARK: - Record Name User Default
+    func setRecordNameUserDefault(name : String) {
+        UserDefaults.standard.set(name, forKey: "RecordName")
+    }
+    
+    func getRecordNameUserDefault() -> String {
+        let recordName = UserDefaults.standard.string(forKey: "RecordName")
+        return recordName ?? "Name"
     }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @State var customAlert = false
     @State private var isThemesPresented = false
     @State private var isLibraryPresented = false
     @State var background : String
@@ -37,7 +38,7 @@ struct HomeView: View {
                 NavigationBar(isPresented: .constant(false), isArrowHidden: true, isTextHidden: true, title: "")
                     //.padding(.bottom, 35)
                 
-                SquareShapeSound(audioRecorder: AudioRecorder(), isLibraryPresented: $isLibraryPresented)
+                SquareShapeSound(audioRecorder: AudioRecorder(), isLibraryPresented: $isLibraryPresented, customAlert: $customAlert)
                     //.padding(.bottom, 90)
                 
                 //MARK: - Libraries & Themes
@@ -63,6 +64,10 @@ struct HomeView: View {
                 .padding(.horizontal, 30)
                 
                 Spacer()
+            }
+            
+            if customAlert {
+                CustomAlert(show: $customAlert, audioRecorder: AudioRecorder())
             }
         }
         .onAppear{

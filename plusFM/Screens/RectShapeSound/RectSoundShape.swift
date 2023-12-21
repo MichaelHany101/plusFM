@@ -11,6 +11,7 @@ struct RectSoundShape: View {
     
     @StateObject private var audioPlayerManager = AudioPlayerManager()
     @ObservedObject var audioRecorder: AudioRecorder
+    @Binding var customAlert : Bool
     
     var body: some View {
         ZStack{
@@ -86,12 +87,15 @@ struct RectSoundShape: View {
         }
         else{
             self.audioRecorder.stopRecording()
+            withAnimation{
+                customAlert.toggle()
+            }
         }
     }
 }
 
 struct RectSoundShape_Previews: PreviewProvider {
     static var previews: some View {
-        RectSoundShape(audioRecorder: AudioRecorder())
+        RectSoundShape(audioRecorder: AudioRecorder(), customAlert: .constant(false))
     }
 }
