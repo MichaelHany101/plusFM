@@ -13,6 +13,7 @@ struct LibraryCell: View {
     @ObservedObject var recordPlayer = RecordPlayer()
     @ObservedObject var audioRecorder: AudioRecorder
     @Binding var customPopUp: Bool
+    @Binding var selectedURL: String
     @State var name = "Name"
     @State var date = "Date"
     @State var time = "Time"
@@ -58,6 +59,7 @@ struct LibraryCell: View {
             VStack{
                 Button(action: {
                     customPopUp.toggle()
+                    selectedURL = "\(recordURL)"
                 }){
                     Image("More-Selected")
                         .resizable()
@@ -81,6 +83,6 @@ struct LibraryCell: View {
 
 struct LibraryCell_Previews: PreviewProvider {
     static var previews: some View {
-        LibraryCell(recordURL: URL(fileURLWithPath: ""), audioRecorder: AudioRecorder(), customPopUp: .constant(false))
+        LibraryCell(recordURL: URL(fileURLWithPath: ""), audioRecorder: AudioRecorder(), customPopUp: .constant(false), selectedURL: .constant(""))
     }
 }

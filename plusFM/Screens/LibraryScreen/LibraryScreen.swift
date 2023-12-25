@@ -32,12 +32,8 @@ struct LibraryScreen: View {
                         ScrollView{
                             ForEach(audioRecorder.recordings, id: \.createdAt) { recording in
                                 if (recording.fileURL.lastPathComponent != ".DS_Store") {
-                                    LibraryCell(recordURL: recording.fileURL, audioRecorder: audioRecorder, customPopUp: $customPopUp)
+                                    LibraryCell(recordURL: recording.fileURL, audioRecorder: audioRecorder, customPopUp: $customPopUp, selectedURL: $selectedURL)
                                         .padding(.vertical, 5)
-                                        .onTapGesture{
-                                            selectedURL = "\(recording.fileURL)"
-                                            print("Michael \(selectedURL)")
-                                        }
                                 }
                             }
                         }
