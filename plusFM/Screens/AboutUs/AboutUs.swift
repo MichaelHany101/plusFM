@@ -39,7 +39,7 @@ struct AboutUs: View {
             .background(Color("AppGray"))
             
             if customAlert {
-                CustomAlert(show: $customAlert, audioRecorder: AudioRecorder())
+                SaveAudioCustomAlert(show: $customAlert, audioRecorder: AudioRecorder())
             }
         }
     }

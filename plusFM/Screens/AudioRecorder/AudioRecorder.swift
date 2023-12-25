@@ -29,6 +29,7 @@ class AudioRecorder: NSObject, ObservableObject {
         }
     }
     
+    //MARK: - Start Recording
     func startRecording() {
         let recordingSession = AVAudioSession.sharedInstance()
         
@@ -41,7 +42,6 @@ class AudioRecorder: NSObject, ObservableObject {
         
         let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let audioFileName = documentPath.appendingPathComponent("\(Date().toString(dateFormat: "dd-MM-YYYY 'at' HH:mm")) at .m4a")
-        print("Michael \(documentPath)")
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 12000,
@@ -52,23 +52,25 @@ class AudioRecorder: NSObject, ObservableObject {
         do {
             audioRecorder = try AVAudioRecorder(url: audioFileName, settings: settings)
             audioRecorder.record()
-
+            if (audioFileName != nil){
+                UserDefaults.standard.set(audioFileName, forKey: "RecordURL")
+            }
             recording = true
         } catch {
             print("Could not start recording")
         }
     }
     
+    //MARK: - Stop Recording
     func stopRecording() {
         audioRecorder.stop()
         recording = false
-        
         fetchRecording()
     }
     
+    //MARK: - Fetch Records
     func fetchRecording() {
         recordings.removeAll()
-        
         let fileManager = FileManager.default
         let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let directoryContents = try! fileManager.contentsOfDirectory(at: documentDirectory, includingPropertiesForKeys: nil)
@@ -82,28 +84,53 @@ class AudioRecorder: NSObject, ObservableObject {
         objectWillChange.send(self)
     }
     
-    func deleteRecording(urlsToDelete: [URL]) {
-            
-        for url in urlsToDelete {
-            print(url)
-            do {
-               try FileManager.default.removeItem(at: url)
-            } catch {
-                print("File could not be deleted!")
-            }
+    //MARK: - Delete Record
+    func deleteRecording(urlToDelete: URL) {
+        do {
+            try FileManager.default.removeItem(at: urlToDelete)
+        } catch {
+            print("File could not be deleted!")
         }
-        
         fetchRecording()
     }
     
-    func editFullName() {
-        var documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        documentPath = documentPath.appendingPathComponent("\(Date().toString(dateFormat: "dd-MM-YYYY 'at' HH:mm")) at .m4a")
-        let audioName = documentPath.lastPathComponent
-        var audioNameSeparated = audioName.components(separatedBy: String(" at "))
-        audioNameSeparated[2] = "\(getRecordNameUserDefault()).m4a"
-        _ = documentPath.deletingLastPathComponent()
-        _ = documentPath.appendingPathComponent("\(audioNameSeparated[0]) at \(audioNameSeparated[1]) at \(audioNameSeparated[2])")
+    //MARK: - Set Record's Name
+    func namingAudioFile(name: String) {
+        guard let originalURL = UserDefaults.standard.url(forKey: "RecordURL") else {
+            print("No audio file recorded.")
+            return
+        }
+        let newFileName = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            .appendingPathComponent("\(Date().toString(dateFormat: "dd-MM-YYYY 'at' HH:mm")) at \(name).m4a")
+        do {
+            try FileManager.default.moveItem(at: originalURL, to: newFileName)
+            print("Audio file renamed.")
+        } catch {
+            print("Error renaming audio file: \(error)")
+        }
+    }
+    
+    //MARK: - Edit Audio's Name
+    func editRecordName(name: String, oldPath: URL?) {
+        guard let originalURL = oldPath else {
+            print("No audio file recorded.")
+            return
+        }
+        
+        let audioName = (originalURL.lastPathComponent).components(separatedBy: String(" at "))
+        let date = audioName[0]
+        let time = audioName[1]
+        let oldName = audioName[2]
+        
+        let newFileName = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            .appendingPathComponent("\(date) at \(time) at \(name).m4a")
+        do {
+            try FileManager.default.moveItem(at: originalURL, to: newFileName)
+            print("Audio file renamed.")
+        } catch {
+            print("Error renaming audio file: \(error)")
+        }
+        
     }
     
     //MARK: - Record Name User Default

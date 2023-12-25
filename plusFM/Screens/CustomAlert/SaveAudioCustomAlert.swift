@@ -1,5 +1,5 @@
 //
-//  CustomAlert.swift
+//  SaveAudioCustomAlert.swift
 //  plusFM
 //
 //  Created by Michael Hany on 21/12/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomAlert: View {
+struct SaveAudioCustomAlert: View {
     
     @Binding var show: Bool
     @State private var recordingTitle: String = ""
@@ -34,8 +34,7 @@ struct CustomAlert: View {
                 HStack{
                     //MARK: - Cancel Button
                     Button(action: {
-                        audioRecorder.setRecordNameUserDefault(name: "")
-                        audioRecorder.editFullName()
+                        audioRecorder.namingAudioFile(name: "")
                         withAnimation{
                             show.toggle()
                         }
@@ -64,8 +63,7 @@ struct CustomAlert: View {
                     
                     //MARK: - Save Button
                     Button(action: {
-                        audioRecorder.setRecordNameUserDefault(name: "\(recordingTitle)")
-                        audioRecorder.editFullName()
+                        audioRecorder.namingAudioFile(name: (recordingTitle != "" ? recordingTitle : "unnamedAudio"))
                         withAnimation{
                             show.toggle()
                         }
@@ -96,8 +94,8 @@ struct CustomAlert: View {
     }
 }
 
-struct CustomAlert_Previews: PreviewProvider {
+struct SaveAudioCustomAlert_Previews: PreviewProvider {
     static var previews: some View {
-        CustomAlert(show: .constant(false), audioRecorder: AudioRecorder())
+        SaveAudioCustomAlert(show: .constant(false), audioRecorder: AudioRecorder())
     }
 }

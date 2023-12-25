@@ -72,7 +72,7 @@ struct MoreView: View {
             .background(Color("AppWhite"))
             
             if customAlert {
-                CustomAlert(show: $customAlert, audioRecorder: AudioRecorder())
+                SaveAudioCustomAlert(show: $customAlert, audioRecorder: AudioRecorder())
             }
         }
     }

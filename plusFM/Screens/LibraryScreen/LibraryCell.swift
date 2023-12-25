@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct LibraryCell: View {
-
+    
     var recordURL: URL
     @ObservedObject var recordPlayer = RecordPlayer()
     @ObservedObject var audioRecorder: AudioRecorder
     @Binding var customPopUp: Bool
-    @State var name : String
-    @State var date : String
-    @State var time : String
+    @State var name = "Name"
+    @State var date = "Date"
+    @State var time = "Time"
     
     var body: some View {
         HStack{
-            //MARK: - Button
+            //MARK: - Play Button
             Button(action: {
                 if recordPlayer.isPlaying == false {
                     self.recordPlayer.startPlayback(audio: self.recordURL)
@@ -41,8 +41,8 @@ struct LibraryCell: View {
             }
             .padding(.trailing, 15)
             .padding(.leading, 15)
-                        
-            //MARK: - Record Details
+            
+            //MARK: - Name and Date
             VStack(alignment: .leading){
                 Text(name)
                     .font(.system(size: 16, weight: .semibold))
@@ -53,7 +53,7 @@ struct LibraryCell: View {
             
             Spacer()
             
-            //MARK: - Record Time and Control
+            //MARK: - Button and Time
             
             VStack{
                 Button(action: {
@@ -72,17 +72,15 @@ struct LibraryCell: View {
         .onAppear{
             print("Michael \(recordURL)")
             let audioName = (recordURL.lastPathComponent).components(separatedBy: String(" at "))
-//            date = audioName[0]
-//            time = audioName[1]
-//            name = audioName[2]
+            date = audioName[0]
+            time = audioName[1]
+            name = audioName[2]
         }
     }
-    
-    func delete(at offsets: IndexSet) {
-        var urlsToDelete = [URL]()
-        for index in offsets {
-            urlsToDelete.append(audioRecorder.recordings[index].fileURL)
-        }
-        audioRecorder.deleteRecording(urlsToDelete: urlsToDelete)
+}
+
+struct LibraryCell_Previews: PreviewProvider {
+    static var previews: some View {
+        LibraryCell(recordURL: URL(fileURLWithPath: ""), audioRecorder: AudioRecorder(), customPopUp: .constant(false))
     }
 }

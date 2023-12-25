@@ -10,13 +10,28 @@ import SwiftUI
 struct EditDeleteMenu: View {
     
     @Binding var show: Bool
+    @Binding var toggleEditDeleteScreen: Bool
+    @Binding var choiceEditDeleteScreen: Int
+    @ObservedObject var audioRecorder: AudioRecorder
+    
     var body: some View {
-        ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
+        ZStack(alignment: Alignment(horizontal: .center, vertical: .center)) {
+            
+            RoundedRectangle(cornerRadius: 30)
+                .fill(Color("AppOrange"))
+                .frame(width: 152, height: 152)
+            
+            RoundedRectangle(cornerRadius: 30)
+                .fill(Color("AppWhite"))
+                .frame(width: 150, height: 150)
+            
             VStack(alignment: .leading, spacing: 25) {
                 //MARK: - Rename
                 Button(action: {
+                    choiceEditDeleteScreen = 1
                     withAnimation{
                         show.toggle()
+                        toggleEditDeleteScreen.toggle()
                     }
                 }){
                     HStack(spacing: 25) {
@@ -29,8 +44,10 @@ struct EditDeleteMenu: View {
                 
                 //MARK: - Delete
                 Button(action: {
+                    choiceEditDeleteScreen = 2
                     withAnimation{
                         show.toggle()
+                        toggleEditDeleteScreen.toggle()
                     }
                 }){
                     HStack(spacing: 25) {
@@ -42,11 +59,12 @@ struct EditDeleteMenu: View {
                 }
             }
         }
+        .padding(.trailing, 30)
     }
 }
 
 struct EditDeleteMenu_Previews: PreviewProvider {
     static var previews: some View {
-        EditDeleteMenu(show: .constant(false))
+        EditDeleteMenu(show: .constant(false), toggleEditDeleteScreen: .constant(false), choiceEditDeleteScreen: .constant(0), audioRecorder: AudioRecorder())
     }
 }

@@ -114,7 +114,7 @@ struct ThemesScreen: View {
             }
             
             if customAlert {
-                CustomAlert(show: $customAlert, audioRecorder: AudioRecorder())
+                SaveAudioCustomAlert(show: $customAlert, audioRecorder: AudioRecorder())
             }
         }
     }
