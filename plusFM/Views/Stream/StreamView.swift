@@ -27,7 +27,10 @@ struct StreamView: View {
                 
                 SquareShapeSound(audioRecorder: AudioRecorder(), isLibraryPresented: $isLibraryPresented, customAlert: $customAlert)
                 
-                Spacer()
+                EqualizerScreen()
+                    //.padding(.bottom, 200)
+                
+                //Spacer()
             }
             
             if customAlert {

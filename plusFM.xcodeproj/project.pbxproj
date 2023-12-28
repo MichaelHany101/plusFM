@@ -44,6 +44,10 @@
 		048FBEAE2B33433E008974CA /* RecordPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FBEAD2B33433E008974CA /* RecordPlayer.swift */; };
 		048FBEB02B334593008974CA /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FBEAF2B334593008974CA /* AudioRecorder.swift */; };
 		0499BC052B28CA5F00CD7B9A /* AudioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499BC042B28CA5F00CD7B9A /* AudioPlayerManager.swift */; };
+		04BFBD182B3C7D850022D9F7 /* EqualizerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFBD172B3C7D850022D9F7 /* EqualizerManager.swift */; };
+		04BFBD1B2B3DACD10022D9F7 /* ScrollViewRTL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFBD1A2B3DACD10022D9F7 /* ScrollViewRTL.swift */; };
+		04BFBD1D2B3DACED0022D9F7 /* EqualizerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFBD1C2B3DACED0022D9F7 /* EqualizerScreen.swift */; };
+		04BFBD1F2B3DAD030022D9F7 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFBD1E2B3DAD030022D9F7 /* CustomSlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +109,10 @@
 		048FBEAD2B33433E008974CA /* RecordPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordPlayer.swift; sourceTree = "<group>"; };
 		048FBEAF2B334593008974CA /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		0499BC042B28CA5F00CD7B9A /* AudioPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerManager.swift; sourceTree = "<group>"; };
+		04BFBD172B3C7D850022D9F7 /* EqualizerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualizerManager.swift; sourceTree = "<group>"; };
+		04BFBD1A2B3DACD10022D9F7 /* ScrollViewRTL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewRTL.swift; sourceTree = "<group>"; };
+		04BFBD1C2B3DACED0022D9F7 /* EqualizerScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EqualizerScreen.swift; sourceTree = "<group>"; };
+		04BFBD1E2B3DAD030022D9F7 /* CustomSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,8 +205,10 @@
 		0416CFF12B20F1A100F81AFE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				04BFBD192B3DAC520022D9F7 /* ScrollViewRTL */,
 				0416CFF22B20F1B600F81AFE /* TabBar */,
 				0416D0112B21520E00F81AFE /* NavigationBar */,
+				04BFBD162B3C7D680022D9F7 /* Equalizer */,
 				0499BC032B28CA5400CD7B9A /* AudioPlayer */,
 				048FBEAA2B3342AA008974CA /* AudioRecorder */,
 				048FBE9B2B311A19008974CA /* ImagePicker */,
@@ -387,6 +397,24 @@
 			path = CustomAlert;
 			sourceTree = "<group>";
 		};
+		04BFBD162B3C7D680022D9F7 /* Equalizer */ = {
+			isa = PBXGroup;
+			children = (
+				04BFBD1E2B3DAD030022D9F7 /* CustomSlider.swift */,
+				04BFBD1C2B3DACED0022D9F7 /* EqualizerScreen.swift */,
+				04BFBD172B3C7D850022D9F7 /* EqualizerManager.swift */,
+			);
+			path = Equalizer;
+			sourceTree = "<group>";
+		};
+		04BFBD192B3DAC520022D9F7 /* ScrollViewRTL */ = {
+			isa = PBXGroup;
+			children = (
+				04BFBD1A2B3DACD10022D9F7 /* ScrollViewRTL.swift */,
+			);
+			path = ScrollViewRTL;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -519,11 +547,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0416D0072B21189B00F81AFE /* HomeView.swift in Sources */,
+				04BFBD1F2B3DAD030022D9F7 /* CustomSlider.swift in Sources */,
 				0416D0332B2402D100F81AFE /* LibraryScreen.swift in Sources */,
 				0416CFC02B20B56000F81AFE /* ContentView.swift in Sources */,
 				04503ED42B360D65003EC8DC /* EditDeleteCustomAlert.swift in Sources */,
 				0416CFF92B20F89600F81AFE /* Colors.swift in Sources */,
 				0416D0102B2127FE00F81AFE /* RectSoundShape.swift in Sources */,
+				04BFBD1D2B3DACED0022D9F7 /* EqualizerScreen.swift in Sources */,
+				04BFBD1B2B3DACD10022D9F7 /* ScrollViewRTL.swift in Sources */,
 				0416D0132B21522C00F81AFE /* NavigationBar.swift in Sources */,
 				048FBEAE2B33433E008974CA /* RecordPlayer.swift in Sources */,
 				0416D0052B21188B00F81AFE /* StreamView.swift in Sources */,
@@ -548,6 +579,7 @@
 				0416CFFB2B21080000F81AFE /* CustomShape.swift in Sources */,
 				048FBEA92B33428B008974CA /* Helper.swift in Sources */,
 				0416D0272B223EE900F81AFE /* SquareShapeSound.swift in Sources */,
+				04BFBD182B3C7D850022D9F7 /* EqualizerManager.swift in Sources */,
 				0416D0092B2118A900F81AFE /* MoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
