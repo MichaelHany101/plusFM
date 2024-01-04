@@ -36,7 +36,7 @@ struct EditDeleteMenu: View {
                 }){
                     HStack(spacing: 25) {
                         Image("Edit")
-                        Text("Rename")
+                        Text("Rename_Alert")
                             .font(.system(size: 16, weight: .semibold))
                             .foregroundColor(Color("AppBlack"))
                     }
@@ -52,7 +52,7 @@ struct EditDeleteMenu: View {
                 }){
                     HStack(spacing: 25) {
                         Image("Delete")
-                        Text("Delete")
+                        Text("Delete_Alert")
                             .font(.system(size: 16, weight: .semibold))
                             .foregroundColor(Color("AppBlack"))
                     }

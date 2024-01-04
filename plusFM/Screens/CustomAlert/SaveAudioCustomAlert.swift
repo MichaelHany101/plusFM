@@ -25,7 +25,7 @@ struct SaveAudioCustomAlert: View {
                 .frame(width: 350, height: 200)
             
             VStack{
-                TextField("Untitled Recording", text: $recordingTitle)
+                TextField("TextField_Alert", text: $recordingTitle)
                     .padding()
                     .background(RoundedRectangle(cornerRadius: 30).stroke(Color("AppOrange"), lineWidth: 1))
                     .padding(.horizontal, 50)
@@ -39,7 +39,7 @@ struct SaveAudioCustomAlert: View {
                             show.toggle()
                         }
                     }) {
-                        Text("Cancel")
+                        Text("Cancel_Alert")
                             .foregroundColor(Color("AppBlack"))
                             .font(.system(size: 18, weight: .semibold))
                             .padding()
@@ -68,7 +68,7 @@ struct SaveAudioCustomAlert: View {
                             show.toggle()
                         }
                     }) {
-                        Text("Save")
+                        Text("Save_Alert")
                             .foregroundColor(Color("AppWhite"))
                             .font(.system(size: 18, weight: .semibold))
                             .padding()

@@ -20,12 +20,12 @@ struct NavigationBar: View {
             Button(action: {
                 isPresented.toggle()
             }){
-                Image(isArrowHidden ? "" : "Back")
+                Image(isArrowHidden ? "" : "Back")//(getLanguageUserDefault() == "English" ? "Back" : "Back_Arabic"))
             }
             
             Spacer()
             
-            Text(isTextHidden ? "" : title)
+            Text(isTextHidden ? "" : (title == "Language" ? "Language_Navigation" : (title == "About_Us" ? "About_Us_Navigation" : (title == "Libraries" ? "Libraries_Navigation" : (title == "Themes" ? "Themes_Navigation" : "")))))
                 .font(.system(size: 22, weight: .semibold))
             Spacer()
             

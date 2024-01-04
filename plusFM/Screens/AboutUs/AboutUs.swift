@@ -15,19 +15,19 @@ struct AboutUs: View {
     var body: some View {
         ZStack{
             VStack(alignment: .leading) {
-                NavigationBar(isPresented: $isPresented, isArrowHidden: false, isTextHidden: false, title: "About us")
+                NavigationBar(isPresented: $isPresented, isArrowHidden: false, isTextHidden: false, title: "About_Us")
                     .background(Color("AppWhite"))
                 
                 RectSoundShape(audioRecorder: AudioRecorder(), customAlert: $customAlert)
                     .padding(.bottom, 30)
                 
                 VStack(alignment: .leading){
-                    Text("Plus FM was launched in Bahrain in November 2022")
+                    Text("AboutUs_First_Line")
                         .font(.system(size: 18, weight: .light))
                         .lineLimit(2)
                         .padding(.bottom, 25)
                     
-                    Text("To advertise with is, please contact Group Plus 00973 39 477 727")
+                    Text("AboutUs_Second_Line")
                         .font(.system(size: 18, weight: .light))
                         .lineLimit(2)
                 }

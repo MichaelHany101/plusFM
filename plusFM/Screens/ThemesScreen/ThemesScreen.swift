@@ -89,7 +89,7 @@ struct ThemesScreen: View {
                             .frame(width: 360, height: 50)
                             .foregroundColor(Color("AppOrange"))
                         
-                        Text("Add custom theme")
+                        Text("Add_Custom_Theme_Choice")
                             .foregroundColor(Color("AppWhite"))
                             .font(.system(size: 18, weight: .semibold))
                     }

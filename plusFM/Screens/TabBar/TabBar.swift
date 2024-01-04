@@ -21,7 +21,7 @@ struct TabBar: View {
                 VStack{
                     Image(index == 0 ? "Home-Selected" : "Home")
                     
-                    Text("Home")
+                    Text("Home_Tab")
                         .foregroundColor(Color(index == 0 ? "AppOrange" : "AppBlack"))
                         .font(.system(size: index == 0 ? 18 : 14, weight: index == 0 ? .semibold : .regular))
                 }
@@ -65,7 +65,7 @@ struct TabBar: View {
                     Image(index == 2 ? "More-Selected" : "More")
                         .padding()
                     
-                    Text("More")
+                    Text("More_Tab")
                         .foregroundColor(Color(index == 2 ? "AppOrange" : "AppBlack"))
                         .font(.system(size: index == 0 ? 18 : 14, weight: index == 0 ? .semibold : .regular))
                 }

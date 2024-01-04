@@ -22,7 +22,7 @@ struct LibraryScreen: View {
     var body: some View {
         ZStack{
             VStack{
-                NavigationBar(isPresented: $isPresented, isArrowHidden: false, isTextHidden: false, title: "Library")
+                NavigationBar(isPresented: $isPresented, isArrowHidden: false, isTextHidden: false, title: "Libraries")
                 
                 Group{
                     RectSoundShape(audioRecorder: AudioRecorder(), customAlert: $customAlert)
@@ -43,8 +43,8 @@ struct LibraryScreen: View {
                         Spacer()
                         
                         Group{
-                            Text("Your library is empty.")
-                            Text("Record your favourite tracks!")
+                            Text("Library_First_Line")
+                            Text("Library_Second_Line")
                         }
                         .font(.system(size: 18, weight: .semibold))
                     }

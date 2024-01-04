@@ -10,9 +10,12 @@ import SwiftUI
 @main
 struct plusFMApp: App {
 
+    @AppStorage("language") private var currentLanguage = "en"
+    
     var body: some Scene {
         WindowGroup {
             ContentView(audioRecorder: AudioRecorder())
+                .environment(\.locale, .init(identifier: currentLanguage))
         }
     }
 }

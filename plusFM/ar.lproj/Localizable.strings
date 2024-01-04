@@ -1,0 +1,53 @@
+/* 
+  Localizable.strings
+  plusFM
+
+  Created by Michael Hany on 29/12/2023.
+  
+*/
+//MARK: - Live Screen
+//no Data
+
+//MARK: - Home Screen
+"Libraries_Button" = "المكتبة";
+"Themes_Button" = "المواضيع";
+
+//MARK: - More Screen
+"Language_Button" = "اللغة";
+"AboutUs_Button" = "من نحن";
+"TuneIn_Button %@" = "استمع الان: %@";
+
+//MARK: - AboutUs Screen
+"AboutUs_First_Line" = "تم اطلاق Plus Fm في البحرين في نوفمبر 2022";
+"AboutUs_Second_Line" = "للتواصل معنا, يرجي الاتصال Group Plus 00973 39 477 727";
+
+//MARK: - Library Screen
+"Library_First_Line" = "مكتبتك فارغة.";
+"Library_Second_Line" = "سجّل اغانيك المفضلة!";
+
+//MARK: - Themes Screen
+"Default_Choice" = "الافتراضي";
+"City_One_Choice" = "المنامة ١";
+"City_Two_Choice" = "المنامة ٢";
+"Winter_Choice" = "شتاء";
+"Work_Choice" = "عمل";
+"Sports_Choice" = "رياضة";
+"Add_Custom_Theme_Choice" = "اضف صورة مخصصة";
+
+//MARK: - TabBar
+"Home_Tab" = "الرئيسية";
+"More_Tab" = "المزيد";
+
+//MARK: - Navigation
+"Libraries_Navigation" = "المكتبة";
+"Themes_Navigation" = "المواضيع";
+"Language_Navigation" = "اللغة";
+"About_Us_Navigation" = "من نحن";
+
+//MARK: - Alerts
+"Cancel_Alert" = "الغاء";
+"Save_Alert" = "حفظ";
+"Delete_Alert" = "حذف";
+"Rename_Alert" = "إعادة التسمية";
+"TextField_Alert" = "تسجيل بدون عنوان";
+"Text_Message_Alert" = "هل انت متأكد انك تريد حذف";

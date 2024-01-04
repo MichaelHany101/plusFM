@@ -1,0 +1,53 @@
+/* 
+  Localizable.strings
+  plusFM
+
+  Created by Michael Hany on 29/12/2023.
+  
+*/
+//MARK: - Live Screen
+//no Data
+
+//MARK: - Home Screen
+"Libraries_Button" = "Libraries";
+"Themes_Button" = "Themes";
+
+//MARK: - More Screen
+"Language_Button" = "Language";
+"AboutUs_Button" = "About us";
+"TuneIn_Button %@" = "Tune in: %@";
+
+//MARK: - AboutUs Screen
+"AboutUs_First_Line" = "Plus FM was launched in Bahrain in November 2022";
+"AboutUs_Second_Line" = "To advertise with is, please contact Group Plus 00973 39 477 727";
+
+//MARK: - Library Screen
+"Library_First_Line" = "Your library is empty.";
+"Library_Second_Line" = "Record your favourite tracks!";
+
+//MARK: - Themes Screen
+"Default_Choice" = "Default";
+"City_One_Choice" = "City 1";
+"City_Two_Choice" = "City 2";
+"Winter_Choice" = "Winter";
+"Work_Choice" = "Work";
+"Sports_Choice" = "Sports";
+"Add_Custom_Theme_Choice" = "Add custom theme";
+
+//MARK: - TabBar
+"Home_Tab" = "Home";
+"More_Tab" = "More";
+
+//MARK: - Navigation
+"Libraries_Navigation" = "Library";
+"Themes_Navigation" = "Themes";
+"Language_Navigation" = "Language";
+"About_Us_Navigation" = "About us";
+
+//MARK: - Alerts
+"Cancel_Alert" = "Cancel";
+"Save_Alert" = "Save";
+"Delete_Alert" = "Delete";
+"Rename_Alert" = "Rename";
+"TextField_Alert" = "Untitled recording";
+"Text_Message_Alert" = "Are you sure you want to delete";

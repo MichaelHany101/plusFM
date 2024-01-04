@@ -20,7 +20,7 @@ struct ContentView: View {
             case 1:
                 StreamView(background: .constant("\(getBackgroundUserDefault())"))
             case 2:
-                MoreView()
+                MoreView(index: $tabBarItem)
             default:
                 NoView()
             }
@@ -35,7 +35,9 @@ struct ContentView: View {
         }
         .onAppear{
             setBackgroungUserDefault(background: "\(getBackgroundUserDefault())")
-            setLanguageUserDefault(lang: "English")
+            if (getLanguageUserDefault() == nil) {
+                setLanguageUserDefault(lang: "English")
+            }
             setMuteSoundUserDefault(mute: false)
             setStreamStateUserDefault(play: true)
             setVolumeValueUserDefault(volume: 0.5)

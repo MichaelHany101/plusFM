@@ -30,7 +30,7 @@ struct EditDeleteCustomAlert: View {
                 //MARK: - Rename or Delete Message
                 //Rename Case
                 if (choiceEditDeleteScreen == 1) {
-                    TextField("Untitled Recording", text: $recordingTitle)
+                    TextField("TextField_Alert", text: $recordingTitle)
                         .padding()
                         .background(RoundedRectangle(cornerRadius: 30).stroke(Color("AppOrange"), lineWidth: 1))
                         .padding(.horizontal, 50)
@@ -38,7 +38,7 @@ struct EditDeleteCustomAlert: View {
                 }
                 //Delete Case
                 else if (choiceEditDeleteScreen == 2) {
-                    Text("Are you sure you want to delete")
+                    Text("Text_Message_Alert")
                         .font(.system(size: 18, weight: .semibold))
                         .padding()
                         .padding(.bottom, 15)
@@ -50,7 +50,7 @@ struct EditDeleteCustomAlert: View {
                             toggleEditDeleteScreen.toggle()
                         }
                     }) {
-                        Text("Cancel")
+                        Text("Cancel_Alert")
                             .foregroundColor(Color("AppBlack"))
                             .font(.system(size: 18, weight: .semibold))
                             .padding()
@@ -86,7 +86,7 @@ struct EditDeleteCustomAlert: View {
                             toggleEditDeleteScreen.toggle()
                         }
                     }) {
-                        Text(choiceEditDeleteScreen == 1 ? "Save" : (choiceEditDeleteScreen == 2 ? "Delete" : ""))
+                        Text(choiceEditDeleteScreen == 1 ? "Save_Alert" : (choiceEditDeleteScreen == 2 ? "Delete_Alert" : ""))
                             .foregroundColor(Color("AppWhite"))
                             .font(.system(size: 18, weight: .semibold))
                             .padding()

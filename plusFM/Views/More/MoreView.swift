@@ -12,6 +12,7 @@ struct MoreView: View {
     @State private var isLanguagePresented = false
     @State private var isAboutUsPresented = false
     @State var customAlert = false
+    @Binding var index : Int
     
     var body: some View {
         ZStack{
@@ -25,26 +26,26 @@ struct MoreView: View {
                         isLanguagePresented.toggle()
                     }){
                         HStack{
-                            Text("Language")
+                            Text("Language_Button")
                                 .font(.system(size: 22, weight: .semibold))
                                 .foregroundColor(Color("AppBlack"))
                             
                             Spacer()
                             
-                            Image("Next")
+                            Image("Next")//getLanguageUserDefault() != "English" ? "Back" : "Back_Arabic")
                                 .scaledToFit()
                         }
                         .padding(.vertical, 15)
                         .padding(.horizontal, 30)
                     }
                     .fullScreenCover(isPresented: $isLanguagePresented){
-                        Language(isPresented: $isLanguagePresented)
+                        Language(index: $index, isPresented: $isLanguagePresented)
                     }
                     
                     Button(action: {
                         isAboutUsPresented.toggle()
                     }){
-                        Text("About us")
+                        Text("AboutUs_Button")
                             .font(.system(size: 22, weight: .semibold))
                             .foregroundColor(Color("AppBlack"))
                             .padding(.vertical, 15)
@@ -54,7 +55,7 @@ struct MoreView: View {
                         AboutUs(isPresented: $isAboutUsPresented)
                     }
                     
-                    Text("Tune in: 89.2 fm")
+                    Text("TuneIn_Button \("89.2 fm")")
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(Color("AppBlack"))
                         .padding(.vertical, 15)
@@ -80,6 +81,6 @@ struct MoreView: View {
 
 struct MoreView_Previews: PreviewProvider {
     static var previews: some View {
-        MoreView()
+        MoreView(index: .constant(2))
     }
 }

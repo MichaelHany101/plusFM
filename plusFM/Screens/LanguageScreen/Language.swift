@@ -9,9 +9,11 @@ import SwiftUI
 
 struct Language: View {
     
+    @Binding var index : Int
     @Binding var isPresented: Bool
     @State var customAlert = false
     @State private var language : String = "English"
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         ZStack{
@@ -26,8 +28,10 @@ struct Language: View {
                     //MARK: - English
                     Button(action: {
                         setLanguageUserDefault(lang: "English")
-                        
                         language = getLanguageUserDefault()
+                        UserDefaults.standard.set("en", forKey: "language")
+                        index = 1
+                        presentationMode.wrappedValue.dismiss()
                     }){
                         HStack{
                             Image(language == "English" ? "Check" : "")
@@ -45,8 +49,10 @@ struct Language: View {
                     //MARK: - العربية
                     Button(action: {
                         setLanguageUserDefault(lang: "العربية")
-                        
                         language = getLanguageUserDefault()
+                        UserDefaults.standard.set("ar", forKey: "language")
+                        index = 1
+                        presentationMode.wrappedValue.dismiss()
                     }){
                         HStack{
                             Image(language == "العربية" ? "Check" : "")
@@ -81,6 +87,6 @@ struct Language: View {
 
 struct Language_Previews: PreviewProvider {
     static var previews: some View {
-        Language(isPresented: .constant(false))
+        Language(index: .constant(2), isPresented: .constant(false))
     }
 }

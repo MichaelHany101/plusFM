@@ -32,7 +32,7 @@ struct HomeGridItem: View {
                         .padding(.top, 35)
                         .padding(.bottom, 15)
                     
-                    Text(name)
+                    Text(name == "Libraries" ? "Libraries_Button" : (name == "Themes" ? "Themes_Button" : ""))
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(Color("AppBlack"))
                         .padding(.horizontal, 50)
@@ -45,6 +45,6 @@ struct HomeGridItem: View {
 
 struct HomeGridItem_Previews: PreviewProvider {
     static var previews: some View {
-        HomeGridItem(icon: "Libraries", name: "Libraries")
+        HomeGridItem(icon: "Libraries", name: "Libraries_Button")
     }
 }

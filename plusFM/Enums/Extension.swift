@@ -8,15 +8,15 @@
 import SwiftUI
 import Foundation
 
-//MARK: - View Extension/ User Default
+//MARK: - View Extension
 extension View {
     //MARK: - Language
     func setLanguageUserDefault(lang : String) {
-        UserDefaults.standard.set(lang, forKey: "Language")
+        UserDefaults.standard.set(lang, forKey: "AppleLanguage")
     }
     
     func getLanguageUserDefault() -> String {
-        let lang = UserDefaults.standard.string(forKey: "Language")
+        let lang = UserDefaults.standard.string(forKey: "AppleLanguage")
         return lang ?? "English"
     }
     
@@ -100,5 +100,4 @@ extension Date
         dateFormatter.dateFormat = format
         return dateFormatter.string(from: self)
     }
-
 }
