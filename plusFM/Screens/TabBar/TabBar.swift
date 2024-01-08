@@ -14,18 +14,16 @@ struct TabBar: View {
         
     var body: some View {
         HStack{
+            Spacer()
+            
             //MARK: - Home
             Button(action: {
                 index = 0
             }){
                 VStack{
                     Image(index == 0 ? "Home-Selected" : "Home")
-                    
-                    Text("Home_Tab")
-                        .foregroundColor(Color(index == 0 ? "AppOrange" : "AppBlack"))
-                        .font(.system(size: index == 0 ? 18 : 14, weight: index == 0 ? .semibold : .regular))
                 }
-                .frame(width: 50, height: 75, alignment: .bottom)
+                .frame(width: 50, height: 80, alignment: .bottom)
             }
             
             Spacer()
@@ -35,18 +33,16 @@ struct TabBar: View {
                 Button(action: {
                     index = 1
                 }){
-                    ZStack{
+                    ZStack(alignment: .center){
                         Image("STREAM-Boarder")
                             .frame(width: 100, height: 100)
-                            .background(Color.white)
+                            .background(Color("AppWhite"))
                             .clipShape(Circle())
-                            .offset(x: 50, y: -90)
-                            .padding(.bottom, -90)
                         
                         Image(index == 1 ? "STREAM-Selected" : "STREAM")
-                            .offset(x: 50, y: -75)
-                            .padding(.bottom, -90)
                     }
+                    .padding(.leading, (graph.size.width / 2) - 50)//(graph.size.width * 0.255))
+                    .offset(y: -100)
                 }
                 .onAppear{
                     DispatchQueue.main.async {
@@ -63,19 +59,16 @@ struct TabBar: View {
             }){
                 VStack{
                     Image(index == 2 ? "More-Selected" : "More")
-                        .padding()
-                    
-                    Text("More_Tab")
-                        .foregroundColor(Color(index == 2 ? "AppOrange" : "AppBlack"))
-                        .font(.system(size: index == 0 ? 18 : 14, weight: index == 0 ? .semibold : .regular))
                 }
-                .frame(width: 50, height: 75, alignment: .bottom)
+                .frame(width: 50, height: 80, alignment: .bottom)
             }
+            
+            Spacer()
         }
         .padding(.vertical)
         .padding(.horizontal, 50)
         .background(Color("AppWhite").clipShape(CustomShape(curvePosition: $curvePosition)))
-        .frame(height: 100, alignment: .bottom)
+        .frame(height: 80, alignment: .bottom)
     }
 }
 

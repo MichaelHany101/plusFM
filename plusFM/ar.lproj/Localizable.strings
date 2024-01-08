@@ -50,4 +50,4 @@
 "Delete_Alert" = "حذف";
 "Rename_Alert" = "إعادة التسمية";
 "TextField_Alert" = "تسجيل بدون عنوان";
-"Text_Message_Alert" = "هل انت متأكد انك تريد حذف";
+"Text_Message_Alert %@" = "هل انت متأكد انك تريد حذف %@";

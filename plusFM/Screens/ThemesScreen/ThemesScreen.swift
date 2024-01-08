@@ -50,7 +50,6 @@ struct ThemesScreen: View {
                     }
                     .padding(.top, 30)
                 }
-                .padding(.horizontal, 15)
                 
                 Group{
                     HStack{
@@ -77,7 +76,6 @@ struct ThemesScreen: View {
                     }
                     .padding(.top, 30)
                 }
-                .padding(.horizontal, 15)
                 .padding(.bottom, 15)
                 
                 //MARK: - Add Custom Theme

@@ -35,7 +35,7 @@ struct HomeGridItem: View {
                     Text(name == "Libraries" ? "Libraries_Button" : (name == "Themes" ? "Themes_Button" : ""))
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(Color("AppBlack"))
-                        .padding(.horizontal, 50)
+                        .padding(.horizontal, 40)
                         .padding(.bottom, 25)
                 }
                 .background(Color.clear)

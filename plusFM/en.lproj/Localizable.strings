@@ -50,4 +50,4 @@
 "Delete_Alert" = "Delete";
 "Rename_Alert" = "Rename";
 "TextField_Alert" = "Untitled recording";
-"Text_Message_Alert" = "Are you sure you want to delete";
+"Text_Message_Alert %@" = "Are you sure you want to delete %@";

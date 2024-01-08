@@ -17,8 +17,10 @@ struct MoreView: View {
     var body: some View {
         ZStack{
             VStack{
+                NavigationBar(isPresented: .constant(false), isArrowHidden: true, isTextHidden: true, title: "")
+                    .background(Color("AppWhite"))
+                
                 RectSoundShape(audioRecorder: AudioRecorder(), customAlert: $customAlert)
-                    .padding(.top, 120)
                 
                 VStack(alignment: .leading){
                     
@@ -66,12 +68,11 @@ struct MoreView: View {
                         .padding(.horizontal, 30)
                     
                     Spacer()
+                    
+                    TabBar(index: $index)
                 }
                 .background(Color("AppGray"))
-                .padding(.bottom, 10)
             }
-            .background(Color("AppWhite"))
-            
             if customAlert {
                 SaveAudioCustomAlert(show: $customAlert, audioRecorder: AudioRecorder())
             }

@@ -39,10 +39,10 @@ struct Themes: View {
                     Text(name == "Default" ? "Default_Choice" : (name == "City 1" ? "City_One_Choice" : (name == "City 2" ? "City_Two_Choice" : (name == "Winter" ? "Winter_Choice" : (name == "Work" ? "Work_Choice" : (name == "Sports" ? "Sports_Choice" : ""))))))
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundColor(textColor)
-                        .padding(.bottom, 15)
                 }
                 .background(Color.clear)
             }
+            .frame(width: 120, height: 120)
         }
     }
 }

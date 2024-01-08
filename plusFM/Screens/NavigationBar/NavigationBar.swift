@@ -46,10 +46,10 @@ struct NavigationBar: View {
                         .frame(width: 15, height: 15)
                 }
             }
-            .frame().frame(width: 60, height: 120)
+            .frame().frame(width: 60, height: 50)
             .padding(.trailing, 20)
         }
-        .frame(width: .infinity, height: 120)
+        .frame(width: .infinity, height: 50)
         .background(Color.clear)
         .padding(.horizontal, 25)
     }

@@ -61,7 +61,7 @@ struct LibraryCell: View {
                     customPopUp.toggle()
                     selectedURL = "\(recordURL)"
                 }){
-                    Image("More-Selected")
+                    Image("More-Points-Selected")
                         .resizable()
                         .frame(width: 30, height: 10)
                 }
@@ -72,7 +72,6 @@ struct LibraryCell: View {
             .padding(.trailing, 30)
         }
         .onAppear{
-            print("Michael \(recordURL)")
             let audioName = (recordURL.lastPathComponent).components(separatedBy: String(" at "))
             date = audioName[0]
             time = audioName[1]

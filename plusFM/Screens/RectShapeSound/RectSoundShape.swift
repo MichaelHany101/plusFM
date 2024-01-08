@@ -19,9 +19,9 @@ struct RectSoundShape: View {
             Image(getStreamStateUserDefault() ? "StreamOn" : "StreamOff")
                 .resizable()
                 .scaledToFit()
-                .padding(.leading, 55)
-                .padding(.trailing, 60)
-                .padding(.vertical, 30)
+                .padding(.leading, 45)
+                .padding(.trailing, 45)
+//                .padding(.vertical, 30)
             
             HStack{
                 //MARK: - Sound Button
@@ -30,9 +30,10 @@ struct RectSoundShape: View {
                     checkMuted()
                 }){
                     Image(getMuteSoundUserDefault() ? "SoundOff" : "SoundOn")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(.top, 15)
                 }
-                .padding(.leading, -35)
-                .padding(.top)
                 
                 Spacer()
                 
@@ -42,18 +43,18 @@ struct RectSoundShape: View {
                     recordOrStop()
                 }){
                     Image(getIsRecordingUserDefault() ? "RecordOff" : "RecordOn")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(.top, 10)
                 }
-                .padding(.trailing, -10)
-                .padding(.top)
             }
         }
-        .frame(width: .infinity, height: 65)
-        .padding()
+        .frame(width: .infinity, height: 100)
         .background(Color("AppWhite"))
         .cornerRadius(25)
         .overlay(
             RoundedRectangle(cornerRadius: 25)
-                .stroke(style: StrokeStyle(lineWidth: 2))
+                .stroke(style: StrokeStyle(lineWidth: 1))
                 .foregroundColor(Color("AppPink").opacity(2))
                 .blur(radius: 2)
         )

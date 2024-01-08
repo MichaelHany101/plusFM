@@ -20,9 +20,15 @@ struct CustomShape : Shape {
             path.addLine(to: CGPoint(x: rect.width, y: 0))
 
             
-            path.move(to: CGPoint(x: curvePosition + 80, y: 0))
+            path.move(to: CGPoint(x: curvePosition + 75, y: 0))
             
-            path.addQuadCurve(to: CGPoint(x: curvePosition - 80, y: 0), control: CGPoint(x: curvePosition, y: 100))
+            path.addQuadCurve(to: CGPoint(x: curvePosition - 75, y: 0), control: CGPoint(x: curvePosition, y: 100))
         }
+    }
+}
+
+struct CustomShape_Previews: PreviewProvider {
+    static var previews: some View {
+        CustomShape(curvePosition: .constant(225.0))
     }
 }

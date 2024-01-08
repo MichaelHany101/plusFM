@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SocialMedia: View {
     var body: some View {
-        HStack{
+        HStack(spacing: 30) {
             //MARK: - Facebook
             Button(action: {
                 if let url = URL(string: "https://www.facebook.com/profile.php?id=100086798425727") {
@@ -18,8 +18,6 @@ struct SocialMedia: View {
             }){
                 Image("facebook")
                     .frame(width: 32, height: 32)
-                    .padding(.horizontal, 15)
-                    .padding(.trailing, 30)
             }
             
             //MARK: - Instagram
@@ -30,8 +28,6 @@ struct SocialMedia: View {
             }){
                 Image("instagram")
                     .frame(width: 32, height: 32)
-                    .padding(.horizontal, 15)
-                    .padding(.trailing, 30)
             }
             
             //MARK: - Tiktok
@@ -42,7 +38,6 @@ struct SocialMedia: View {
             }){
                 Image("tiktok")
                     .frame(width: 32, height: 32)
-                    .padding(.horizontal, 15)
             }
         }
     }

@@ -38,7 +38,9 @@ struct EditDeleteCustomAlert: View {
                 }
                 //Delete Case
                 else if (choiceEditDeleteScreen == 2) {
-                    Text("Text_Message_Alert")
+                    let audioName = (URL(string: selectedURL)!.lastPathComponent).components(separatedBy: String(" at "))
+                    let name = audioName[2]
+                    Text("Text_Message_Alert \"\(name)\"")
                         .font(.system(size: 18, weight: .semibold))
                         .padding()
                         .padding(.bottom, 15)

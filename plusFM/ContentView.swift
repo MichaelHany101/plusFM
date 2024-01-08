@@ -13,24 +13,16 @@ struct ContentView: View {
     @ObservedObject var audioRecorder: AudioRecorder
     
     var body: some View {
-        ZStack{
+        VStack{
             switch tabBarItem {
             case 0:
                 HomeView(background: "\(getBackgroundUserDefault())", index: $tabBarItem)
             case 1:
-                StreamView(background: .constant("\(getBackgroundUserDefault())"))
+                StreamView(background: .constant("\(getBackgroundUserDefault())"),index: $tabBarItem)
             case 2:
                 MoreView(index: $tabBarItem)
             default:
                 NoView()
-            }
-            VStack{
-                
-                NavigationBar(isPresented: .constant(false), isArrowHidden: true, isTextHidden: true, title: "")
-                
-                Spacer()
-                
-                TabBar(index: $tabBarItem)
             }
         }
         .onAppear{

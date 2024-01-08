@@ -25,14 +25,14 @@ struct SquareShapeSound: View {
                         .resizable()
                         .scaledToFill()
                         .frame(width: .infinity, height: 85)
-                        .padding(.leading, -80)
+                        .padding(.leading, 50)
                         .edgesIgnoringSafeArea(.horizontal)
                     
                     Image("PlusFm-Wave")
                         .resizable()
                         .scaledToFill()
                         .frame(width: .infinity, height: 85)
-                        .padding(.trailing, -80)
+                        .padding(.trailing, 50)
                         .edgesIgnoringSafeArea(.horizontal)
                 }
                 

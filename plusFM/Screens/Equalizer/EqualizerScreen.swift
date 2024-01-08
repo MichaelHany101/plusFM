@@ -14,14 +14,14 @@ struct EqualizerScreen: View {
     var body: some View {
         VStack{
 //MARK: - Sliders
-            HStack(spacing: 25){
+            HStack(spacing: 20){
                 Spacer()
                 CustomSlider(sliderValue: 0.5, hzValue: "64 Hz")
-                Divider()
+                Spacer()
                 CustomSlider(sliderValue: 0.5, hzValue: "800 Hz")
-                Divider()
+                Spacer()
                 CustomSlider(sliderValue: 0.5, hzValue: "4 kHz")
-                Divider()
+                Spacer()
                 CustomSlider(sliderValue: 0.5, hzValue: "14 Hz")
                 Spacer()
             }
@@ -29,7 +29,7 @@ struct EqualizerScreen: View {
 //MARK: - Buttons
             ScrollViewRTL(type: .hList, showsIndicator: false) {
                 
-                HStack{
+                HStack(alignment: .center, spacing: 15){
                     //MARK: - Rock
                     Button(action: {
                         selected = "Rock"

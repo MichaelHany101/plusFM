@@ -12,29 +12,36 @@ struct StreamView: View {
     @State var customAlert = false
     @Binding var background : String
     @State private var isLibraryPresented = false
+    @Binding var index : Int
 
     var body: some View {
         ZStack{
-            Image(background)
-                .resizable()
-                .edgesIgnoringSafeArea(.all)
-                .opacity(0.9)
-                .frame(width: .infinity, height: .infinity, alignment: .center)
-                .mask(LinearGradient(gradient: Gradient(colors: [.clear, .white]), startPoint: .bottom, endPoint: .top))
-            
-            VStack{
-                NavigationBar(isPresented: .constant(false), isArrowHidden: true, isTextHidden: true, title: "")
+            GeometryReader { graph in
+                Image(background)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .edgesIgnoringSafeArea(.all)
+                    .opacity(0.3)
+                    .frame(maxWidth: graph.size.width * 1.25, maxHeight: graph.size.height)
                 
-                SquareShapeSound(audioRecorder: AudioRecorder(), isLibraryPresented: $isLibraryPresented, customAlert: $customAlert)
+                VStack{
+                    NavigationBar(isPresented: .constant(false), isArrowHidden: true, isTextHidden: true, title: "")
+                        .frame(width: graph.size.width)
+                    
+                    SquareShapeSound(audioRecorder: AudioRecorder(), isLibraryPresented: $isLibraryPresented, customAlert: $customAlert)
+                        .frame(width: graph.size.width)
+                    
+                    EqualizerScreen()
+                        .frame(width: graph.size.width)
+                    
+                    Spacer()
+                    
+                    TabBar(index: $index)
+                }
                 
-                EqualizerScreen()
-                    //.padding(.bottom, 200)
-                
-                //Spacer()
-            }
-            
-            if customAlert {
-                SaveAudioCustomAlert(show: $customAlert, audioRecorder: AudioRecorder())
+                if customAlert {
+                    SaveAudioCustomAlert(show: $customAlert, audioRecorder: AudioRecorder())
+                }
             }
         }
         .onAppear{
@@ -45,6 +52,6 @@ struct StreamView: View {
 
 struct StreamView_Previews: PreviewProvider {
     static var previews: some View {
-        StreamView(background: .constant("PlusFM"))
+        StreamView(background: .constant("PlusFM"), index: .constant(1))
     }
 }

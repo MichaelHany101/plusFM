@@ -30,6 +30,6 @@ struct CustomSlider: View {
 }
 struct CustomSlider_Previews: PreviewProvider {
     static var previews: some View {
-        CustomSlider(sliderValue: 0.5, hzValue: "64 Hz")
+        CustomSlider(sliderValue: 0.5, hzValue: "666 KHz")
     }
 }

@@ -23,6 +23,7 @@ struct LibraryScreen: View {
         ZStack{
             VStack{
                 NavigationBar(isPresented: $isPresented, isArrowHidden: false, isTextHidden: false, title: "Libraries")
+                    .background(Color("AppWhite"))
                 
                 Group{
                     RectSoundShape(audioRecorder: AudioRecorder(), customAlert: $customAlert)
@@ -54,6 +55,7 @@ struct LibraryScreen: View {
                 
                 TabBar(index: .constant(0))
             }
+            .background(Color("AppGray"))
             .onAppear{
                 if (audioRecorder.recordings.count == 0 || (audioRecorder.recordings.count == 1 && audioRecorder.recordings[0].fileURL.lastPathComponent == ".DS_Store")) {
                     setIsThereRecordUserDefault(exist: false)
