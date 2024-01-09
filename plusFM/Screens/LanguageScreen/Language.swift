@@ -30,6 +30,7 @@ struct Language: View {
                         setLanguageUserDefault(lang: "English")
                         language = getLanguageUserDefault()
                         UserDefaults.standard.set("en", forKey: "language")
+                        LanguageService.lang = true
                         index = 1
                         presentationMode.wrappedValue.dismiss()
                     }){
@@ -51,6 +52,7 @@ struct Language: View {
                         setLanguageUserDefault(lang: "العربية")
                         language = getLanguageUserDefault()
                         UserDefaults.standard.set("ar", forKey: "language")
+                        LanguageService.lang = false
                         index = 1
                         presentationMode.wrappedValue.dismiss()
                     }){

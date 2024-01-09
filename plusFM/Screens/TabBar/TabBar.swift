@@ -21,7 +21,12 @@ struct TabBar: View {
                 index = 0
             }){
                 VStack{
-                    Image(index == 0 ? "Home-Selected" : "Home")
+                    if (getLanguageUserDefault() == "English") {
+                        Image(index == 0 ? "Home-Selected" : "Home")
+                    }
+                    else {
+                        Image(index == 0 ? "Home-Arabic-Selected" : "Home-Arabic")
+                    }
                 }
                 .frame(width: 50, height: 80, alignment: .bottom)
             }
@@ -58,7 +63,12 @@ struct TabBar: View {
                 index = 2
             }){
                 VStack{
-                    Image(index == 2 ? "More-Selected" : "More")
+                    if (getLanguageUserDefault() == "English") {
+                        Image(index == 2 ? "More-Selected" : "More")
+                    }
+                    else {
+                        Image(index == 2 ? "More-Arabic-Selected" : "More-Arabic")
+                    }
                 }
                 .frame(width: 50, height: 80, alignment: .bottom)
             }

@@ -16,6 +16,7 @@ struct plusFMApp: App {
         WindowGroup {
             ContentView(audioRecorder: AudioRecorder())
                 .environment(\.locale, .init(identifier: currentLanguage))
+                .environment(\.layoutDirection, LanguageService.lang ? .leftToRight : .rightToLeft)
         }
     }
 }

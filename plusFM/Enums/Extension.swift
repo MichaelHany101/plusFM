@@ -12,11 +12,11 @@ import Foundation
 extension View {
     //MARK: - Language
     func setLanguageUserDefault(lang : String) {
-        UserDefaults.standard.set(lang, forKey: "AppleLanguage")
+        UserDefaults.standard.set(lang, forKey: "AppLanguage")
     }
     
     func getLanguageUserDefault() -> String {
-        let lang = UserDefaults.standard.string(forKey: "AppleLanguage")
+        let lang = UserDefaults.standard.string(forKey: "AppLanguage")
         return lang ?? "English"
     }
     

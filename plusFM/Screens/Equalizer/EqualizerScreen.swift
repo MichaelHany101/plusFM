@@ -178,6 +178,7 @@ struct EqualizerScreen: View {
             }
             Spacer()
         }
+        .frame(height: 250)
         .background(Color.clear)
     }
 }

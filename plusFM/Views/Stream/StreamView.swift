@@ -24,7 +24,7 @@ struct StreamView: View {
                     .opacity(0.3)
                     .frame(maxWidth: graph.size.width * 1.25, maxHeight: graph.size.height)
                 
-                VStack{
+                VStack(spacing: -20){
                     NavigationBar(isPresented: .constant(false), isArrowHidden: true, isTextHidden: true, title: "")
                         .frame(width: graph.size.width)
                     

@@ -44,6 +44,7 @@
 		048FBEAE2B33433E008974CA /* RecordPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FBEAD2B33433E008974CA /* RecordPlayer.swift */; };
 		048FBEB02B334593008974CA /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FBEAF2B334593008974CA /* AudioRecorder.swift */; };
 		0499BC052B28CA5F00CD7B9A /* AudioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499BC042B28CA5F00CD7B9A /* AudioPlayerManager.swift */; };
+		04AD94E72B4D444800A20C3E /* LanguageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD94E62B4D444800A20C3E /* LanguageService.swift */; };
 		04BFBD182B3C7D850022D9F7 /* EqualizerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFBD172B3C7D850022D9F7 /* EqualizerManager.swift */; };
 		04BFBD1B2B3DACD10022D9F7 /* ScrollViewRTL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFBD1A2B3DACD10022D9F7 /* ScrollViewRTL.swift */; };
 		04BFBD1D2B3DACED0022D9F7 /* EqualizerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFBD1C2B3DACED0022D9F7 /* EqualizerScreen.swift */; };
@@ -110,6 +111,7 @@
 		048FBEAD2B33433E008974CA /* RecordPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordPlayer.swift; sourceTree = "<group>"; };
 		048FBEAF2B334593008974CA /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		0499BC042B28CA5F00CD7B9A /* AudioPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerManager.swift; sourceTree = "<group>"; };
+		04AD94E62B4D444800A20C3E /* LanguageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageService.swift; sourceTree = "<group>"; };
 		04BFBD172B3C7D850022D9F7 /* EqualizerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualizerManager.swift; sourceTree = "<group>"; };
 		04BFBD1A2B3DACD10022D9F7 /* ScrollViewRTL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewRTL.swift; sourceTree = "<group>"; };
 		04BFBD1C2B3DACED0022D9F7 /* EqualizerScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EqualizerScreen.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				0416D01E2B22099700F81AFE /* Language.swift */,
+				04AD94E62B4D444800A20C3E /* LanguageService.swift */,
 			);
 			path = LanguageScreen;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				0416D01C2B22016200F81AFE /* AboutUs.swift in Sources */,
 				04503ECF2B33C8CD003EC8DC /* SaveAudioCustomAlert.swift in Sources */,
 				0416CFF42B20F1CE00F81AFE /* TabBar.swift in Sources */,
+				04AD94E72B4D444800A20C3E /* LanguageService.swift in Sources */,
 				0416D0302B226D7E00F81AFE /* Themes.swift in Sources */,
 				0416D02D2B226C6B00F81AFE /* ThemesScreen.swift in Sources */,
 				0416D00B2B211EB800F81AFE /* NoView.swift in Sources */,

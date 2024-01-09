@@ -29,6 +29,7 @@ struct ContentView: View {
             setBackgroungUserDefault(background: "\(getBackgroundUserDefault())")
             if (getLanguageUserDefault() == nil) {
                 setLanguageUserDefault(lang: "English")
+                LanguageService.lang = true
             }
             setMuteSoundUserDefault(mute: false)
             setStreamStateUserDefault(play: true)

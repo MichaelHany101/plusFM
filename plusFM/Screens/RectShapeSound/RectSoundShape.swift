@@ -16,12 +16,21 @@ struct RectSoundShape: View {
     var body: some View {
         ZStack{
             //MARK: - Signal Image
-            Image(getStreamStateUserDefault() ? "StreamOn" : "StreamOff")
-                .resizable()
-                .scaledToFit()
-                .padding(.leading, 45)
-                .padding(.trailing, 45)
-//                .padding(.vertical, 30)
+            if (getLanguageUserDefault() == "English") {
+                Image(getStreamStateUserDefault() ? "StreamOn" : "StreamOff")
+                    .resizable()
+                    .scaledToFit()
+                    .padding(.leading, 45)
+                    .padding(.trailing, 45)
+            }
+            else {
+                Image(getStreamStateUserDefault() ? "StreamOn" : "StreamOff")
+                    .resizable()
+                    .scaledToFit()
+                    .padding(.leading, 45)
+                    .padding(.trailing, 45)
+                    .scaleEffect(x: -1, y: 1)
+            }
             
             HStack{
                 //MARK: - Sound Button

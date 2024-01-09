@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct ThemesScreen: View {
 
@@ -15,7 +16,6 @@ struct ThemesScreen: View {
     @Binding var isPresented : Bool
     @Binding var background : String
     @Binding var index : Int
-    var imagePickerCoordinator : ImagePickerCoordinator?
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -80,7 +80,7 @@ struct ThemesScreen: View {
                 
                 //MARK: - Add Custom Theme
                 Button(action: {
-                    isImagePickerPresented.toggle()
+                    isImagePickerPresented = true
                 }){
                     ZStack{
                         RoundedRectangle(cornerRadius: 25)
@@ -92,16 +92,18 @@ struct ThemesScreen: View {
                             .font(.system(size: 18, weight: .semibold))
                     }
                 }
-                .sheet(isPresented: $isImagePickerPresented, onDismiss: {
-                    if let selectedImage = selectedImage {
-                        
-                        background = getBackgroundUserDefault()
-                        index = 1
-                        presentationMode.wrappedValue.dismiss()
-                    }
-                }) {
-                    let imagePicker = ImagePicker(image: $selectedImage)
-                }
+                .sheet(isPresented: $isImagePickerPresented) {
+                    ImagePicker(selectedImage: $selectedImage)}
+//                .sheet(isPresented: $isImagePickerPresented, onDismiss: {
+//                    if let selectedImage = selectedImage {
+//                        
+//                        background = getBackgroundUserDefault()
+//                        index = 1
+//                        presentationMode.wrappedValue.dismiss()
+//                    }
+//                }) {
+//                    let imagePicker = ImagePicker(image: $selectedImage)
+//                }
                 
                 Spacer()
                 

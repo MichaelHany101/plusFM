@@ -34,7 +34,7 @@ struct MoreView: View {
                             
                             Spacer()
                             
-                            Image("Next")//getLanguageUserDefault() != "English" ? "Back" : "Back_Arabic")
+                            Image(getLanguageUserDefault() != "English" ? "Back" : "Back_Arabic")
                                 .scaledToFit()
                         }
                         .padding(.vertical, 15)
